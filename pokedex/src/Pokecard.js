@@ -8,10 +8,10 @@ class Pokecard extends Component {
     let imgURL = `${pokeURL}${this.props.id}.png`
     return (
       <div className="Pokecard">
-        <h1>{this.props.name}</h1>
+        <h1 className="Pokecard-title">{this.props.name}</h1>
         <img src={imgURL} className="Pokecard-img" alt="A Pokemon character" />
-        <div>Type: {this.props.type}</div>
-        <div>Experience: {this.props.exp}</div>
+        <div className="Pokecard-data">Type: {this.props.type}</div>
+        <div className="Pokecard-data">Experience: {this.props.exp}</div>
       </div>
     );
   }
