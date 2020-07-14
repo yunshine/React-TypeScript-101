@@ -4,7 +4,7 @@ import './Die.css';
 class Die extends Component {
   constructor(props) {
     super(props);
-    this.state = { number: 1 };
+    // this.state = { number: 1 };
     // this.-something- = this.-something-.bind(this);
   }
 
