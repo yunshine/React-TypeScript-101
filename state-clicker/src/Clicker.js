@@ -20,7 +20,7 @@ class Clicker extends Component {
     console.log("working");
     buttonDisplay = <button onClick={this.generateNumber}>Random Number</button>;
   } else {
-    buttonDisplay = "You Win!";
+    buttonDisplay = <h1>You Win!</h1>;
   }
 
     return (
