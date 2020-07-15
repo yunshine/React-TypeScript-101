@@ -1,5 +1,6 @@
 import React, { Component } from 'react' // imrc is the shortcut...
 import './Lottery.css'; // make a CSS file for this component...
+import Ball from './Ball';
 
 class Lottery extends Component {
   static defaultProps = {
@@ -9,7 +10,7 @@ class Lottery extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = { numbers: [] };
+    this.state = { numbers: Array.from({ length: this.props.maxBalls }) };
     this.handleClick = this.handleClick.bind(this);
     this.generate = this.generate.bind(this);
   }
@@ -34,7 +35,7 @@ class Lottery extends Component {
       <section className="Lottery">
         <h1>{this.props.title}</h1>
         <div>
-          Balls go here!
+          {this.state.numbers.map(number => <Ball number={number}/>)}
         </div>
         <button onclick={this.handleClick}>Generate New Numbers</button>
       </section>
