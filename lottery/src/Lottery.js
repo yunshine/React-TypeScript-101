@@ -12,16 +12,19 @@ class Lottery extends Component {
     super(props);
     this.state = { numbers: Array.from({ length: this.props.maxBalls }) };
     this.handleClick = this.handleClick.bind(this);
-    this.generate = this.generate.bind(this);
+    // this.generate = this.generate.bind(this);
   }
 
   generate() {
-
+    this.setState(currentState => ({
+      numbers: currentState.numbers.map(
+        n => Math.floor(Math.random() * this.props.maxNumber) + 1
+      )
+    }));
   }
 
   handleClick() {
     this.generate();
-    // this.setState({ key: value });
   }
 
   // tripleKill() {
@@ -37,7 +40,7 @@ class Lottery extends Component {
         <div>
           {this.state.numbers.map(number => <Ball number={number}/>)}
         </div>
-        <button onclick={this.handleClick}>Generate New Numbers</button>
+        <button onClick={this.handleClick}>Generate New Numbers</button>
       </section>
     );
   }
