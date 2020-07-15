@@ -7,7 +7,10 @@ function App() {
   return (
     <div className="App">
       <Lottery />
-      <Ball />
+      <Ball number={39} />
+      <Ball number={39} />
+      <Ball number={39} />
+      <Ball number={39} />
     </div>
   );
 }

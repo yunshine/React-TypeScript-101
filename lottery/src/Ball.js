@@ -5,7 +5,7 @@ class Ball extends Component {
   render() {
       return (
       <div className="Ball">
-        39{this.props.number}
+        {this.props.number}
       </div>
     );
   }
