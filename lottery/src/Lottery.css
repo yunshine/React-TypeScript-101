@@ -1,0 +1,16 @@
+.Lottery {
+  border: solid 2px turquoise;
+  width: 40em;
+  text-align: center;
+  margin: 1em auto auto;
+  padding: 1em 0 2em 0;
+}
+
+.Lottery button {
+  margin-top: 16px;
+  background-color: turquoise;
+  border: none;
+  color: white;
+  padding: 16px;
+  font-size: 120%;
+}
