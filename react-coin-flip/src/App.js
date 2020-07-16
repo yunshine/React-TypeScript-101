@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Coin from './Coin'
 import Flip from './Flip'
+// import Coin from './Coin'
 
 function App() {
   return (

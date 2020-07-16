@@ -4,33 +4,36 @@ import Coin from './Coin'
 
 class Flip extends Component {
   static defaultProps = {
-    side: "heads",
   }
+
   constructor(props) {
     super(props);
-    this.state = { side: 0, };
+    this.state = { 
+      side: 0, 
+      heads: 0, 
+      tails: 0, 
+    };
     this.flipCoin = this.flipCoin.bind(this);
   }
 
   flipCoin() {
-    this.setState(oldState => {
-      return { side: Math.floor(Math.random() * 2) };
-    })
+    let flipResult = Math.floor(Math.random() * 2);
+          console.log("result: ", flipResult);
+    if (flipResult === 0) {
+      console.log("zero was rolled, so...");
+      this.setState(oldState => {
+        return { side: flipResult, heads: oldState + 1 };
+      })
+    } 
+    console.log("how many zeroes/heads?", this.state.heads);
   }
 
-  // tripleKill() {
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }   => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
       return (
       <div className="Flip">
-      {/* // <h1>{this.state.Flip}</h1>
-      // <h1>{this.props.Flip}</h1> */}
         <h1>Flip a coin?</h1>
-        {this.state.side}
+        {/* <h1>{this.state.heads}</h1> */}
         <Coin url="https://tinyurl.com/react-coin-heads-jpg" />
         <button onClick={this.flipCoin}>Flip</button>
       </div>
