@@ -44,8 +44,8 @@ class Flip extends Component {
       return (
       <div className="Flip">
         <h1>Flip a coin?</h1>
-        {/* <h1>{this.state.heads}</h1> */}
-        <Coin url="https://tinyurl.com/react-coin-heads-jpg" />
+         {/* <h1>{this.state.currentSide.side}</h1> */}
+        {this.state.currentSide && <Coin data={this.state.currentSide} />}
         <button onClick={this.handleClick}>Flip</button>
         <h3>Out of {this.state.numberOfFlips} flips, heads came up {this.state.numberOfHeads} times, and tails came up {this.state.numberOfTails} times.</h3>
       </div>
