@@ -17,23 +17,23 @@ class Flip extends Component {
       numberOfFlips: 0,
       numberOfHeads: 0, 
       numberOfTails: 0, 
-      currentSide: 0, 
-      heads: 0, 
-      tails: 0, 
+      currentSide: null, 
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   flipCoin() {
-    let flipResult = Math.floor(Math.random() * 2);
-          console.log("result: ", flipResult);
-    if (flipResult === 0) {
-      console.log("zero was rolled, so...");
-      this.setState(oldState => {
-        return { currentSide: flipResult, numberOfHeads: oldState + 1 };
-      })
-    } 
-    console.log("how many zeroes/heads?", this.state.numberOfHeads);
+    console.log(this.state.numberOfFlips);
+    let flipResult = choice(this.props.coin);
+    this.setState(oldState => {
+      return {
+        currentSide: flipResult,
+        numberOfFlips: oldState.numberOfFlips + 1,
+        numberOfHeads: oldState.numberOfHeads + (flipResult.side === "heads" ? 1 : 0),
+        numberOfTails: oldState.numberOfTails + (flipResult.side === "tails" ? 1 : 0)
+      }
+    })
+    console.log("the flip result was: ", flipResult, "the number of flips was: ", this.state.numberOfFlips);
   }
 
   handleClick(event) {
