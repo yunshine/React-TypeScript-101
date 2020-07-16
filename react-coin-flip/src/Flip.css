@@ -1,0 +1,11 @@
+.Flip button {
+  padding: 8px 32px;
+  margin: 16px;
+  font-weight: bold;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+.Flip button:hover {
+  cursor: pointer
+}
