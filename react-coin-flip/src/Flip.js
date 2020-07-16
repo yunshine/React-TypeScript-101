@@ -8,13 +8,15 @@ class Flip extends Component {
   }
   constructor(props) {
     super(props);
-    // this.state = { key: value };
-    // this.Flip = this.Flip.bind(this);
+    this.state = { side: 0, };
+    this.flipCoin = this.flipCoin.bind(this);
   }
 
-  // Flip() {
-  //   this.setState({ key: value });
-  // }
+  flipCoin() {
+    this.setState(oldState => {
+      return { side: Math.floor(Math.random() * 2) };
+    })
+  }
 
   // tripleKill() {
   //   this.setState(oldState => {
@@ -28,8 +30,9 @@ class Flip extends Component {
       {/* // <h1>{this.state.Flip}</h1>
       // <h1>{this.props.Flip}</h1> */}
         <h1>Flip a coin?</h1>
+        {this.state.side}
         <Coin url="https://tinyurl.com/react-coin-heads-jpg" />
-        <button>Flip</button>
+        <button onClick={this.flipCoin}>Flip</button>
       </div>
     );
   }
