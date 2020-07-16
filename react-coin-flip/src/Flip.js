@@ -1,19 +1,27 @@
 import React, { Component } from 'react' // imrc is the shortcut...
 import './Flip.css'; // make a CSS file for this component...
 import Coin from './Coin'
+import { choice } from './Helpers'
 
 class Flip extends Component {
   static defaultProps = {
+    coin: [
+      {side: "heads", imgSrc: "https://tinyurl.com/react-coin-heads-jpg"},
+      {side: "tails", imgSrc: "https://tinyurl.com/react-coin-tails-jpg"},
+    ]
   }
 
   constructor(props) {
     super(props);
     this.state = { 
-      side: 0, 
+      numberOfFlips: 0,
+      numberOfHeads: 0, 
+      numberOfTails: 0, 
+      currentSide: 0, 
       heads: 0, 
       tails: 0, 
     };
-    this.flipCoin = this.flipCoin.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   flipCoin() {
@@ -22,12 +30,15 @@ class Flip extends Component {
     if (flipResult === 0) {
       console.log("zero was rolled, so...");
       this.setState(oldState => {
-        return { side: flipResult, heads: oldState + 1 };
+        return { currentSide: flipResult, numberOfHeads: oldState + 1 };
       })
     } 
-    console.log("how many zeroes/heads?", this.state.heads);
+    console.log("how many zeroes/heads?", this.state.numberOfHeads);
   }
 
+  handleClick(event) {
+    this.flipCoin();
+  }
 
   render() {
       return (
@@ -35,7 +46,8 @@ class Flip extends Component {
         <h1>Flip a coin?</h1>
         {/* <h1>{this.state.heads}</h1> */}
         <Coin url="https://tinyurl.com/react-coin-heads-jpg" />
-        <button onClick={this.flipCoin}>Flip</button>
+        <button onClick={this.handleClick}>Flip</button>
+        <h3>Out of {this.state.numberOfFlips} flips, heads came up {this.state.numberOfHeads} times, and tails came up {this.state.numberOfTails} times.</h3>
       </div>
     );
   }
