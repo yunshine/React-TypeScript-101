@@ -1,35 +1,15 @@
 import React, { Component } from 'react' // imrc is the shortcut...
-import './-something-.css'; // make a CSS file for this component...
+import './Coin.css'; // make a CSS file for this component...
 
-class -something- extends Component {
-  // static defaultProps = {
-  //   key: value,
-  // }
-  constructor(props) {
-    super(props);
-    // this.state = { key: value };
-    // this.-something- = this.-something-.bind(this);
-  }
-
-  // -something-() {
-  //   this.setState({ key: value });
-  // }
-
-  // tripleKill() {
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }   => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
+class Coin extends Component {
 
   render() {
       return (
-      <div className="-something-">
-      // <h1>{this.state.-something-}</h1>
-      // <h1>{this.props.-something-}</h1>
-        <h1>This is the new component...</h1>
+      <div className="Coin">
+        <img src={this.props.coinInfo.imageSource} />
       </div>
     );
   }
 }
 
-export default -something-; /// connect this component to App.js...
+export default Coin; /// connect this component to App.js...

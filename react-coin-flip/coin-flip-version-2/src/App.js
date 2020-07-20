@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-// import -something-, { -something- } from './-something-'
+import Flip from './Flip'
 
 function App() {
   return (
     <div className="App">
-      <h1>Testing...</h1>
-      // <-something- />
+      <Flip />
     </div>
   );
 }

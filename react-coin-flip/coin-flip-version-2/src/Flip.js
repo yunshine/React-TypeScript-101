@@ -1,17 +1,19 @@
 import React, { Component } from 'react' // imrc is the shortcut...
-import './-something-.css'; // make a CSS file for this component...
+import './Flip.css'; // make a CSS file for this component...
+import Coin from './Coin'
 
-class -something- extends Component {
-  // static defaultProps = {
-  //   key: value,
-  // }
-  constructor(props) {
-    super(props);
-    // this.state = { key: value };
-    // this.-something- = this.-something-.bind(this);
+
+class Flip extends Component {
+  static defaultProps = {
+    coin: [{side: 'heads', imageSource: 'https://tinyurl.com/react-coin-heads-jpg'}, {side: 'tails', imageSource: 'https://tinyurl.com/react-coin-tails-jpg'}],
   }
+  // constructor(props) {
+  //   super(props);
+    // this.state = { key: value };
+    // this.Flip = this.Flip.bind(this);
+  // }
 
-  // -something-() {
+  // Flip() {
   //   this.setState({ key: value });
   // }
 
@@ -23,13 +25,12 @@ class -something- extends Component {
 
   render() {
       return (
-      <div className="-something-">
-      // <h1>{this.state.-something-}</h1>
-      // <h1>{this.props.-something-}</h1>
-        <h1>This is the new component...</h1>
+      <div className="Flip">
+        <h1>Flip a Coin!</h1>
+        <Coin coinInfo={this.props.coin[0]} />
       </div>
     );
   }
 }
 
-export default -something-; /// connect this component to App.js...
+export default Flip; /// connect this component to App.js...
