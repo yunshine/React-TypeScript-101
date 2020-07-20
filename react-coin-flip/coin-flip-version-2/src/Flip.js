@@ -9,16 +9,30 @@ class Flip extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = { totalFlips: 0, headsResults: 0, tailsResults: 0 };
+    this.state = { totalFlips: 0, headsResults: 0, tailsResults: 0, currentSide: '' };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // Flip() {
-  //   this.setState({ key: value });
-  // }
+  flipCoin(array) {
+    this.setState(oldState => {
+      return { totalFlips: oldState.totalFlips + 1 };
+    })
+    let randomIndex = Math.floor(Math.random() * array.length);
+    if (randomIndex === 0) {
+      this.setState(oldState => {
+        return { headsResults: oldState.headsResults + 1, currentSide: randomIndex, };
+      })
+    } else {
+      this.setState(oldState => {
+        return { tailsResults: oldState.tailsResults + 1, currentSide: randomIndex };
+      })
+    }
+
+    console.log("a click has happened...", "here's my array: ", array, "here's the random index", randomIndex, "totalFlips: ", this.state.totalFlips, this. state.currentSide);
+  }
 
   handleClick() {
-    console.log("clicking...");
+    this.flipCoin(this.props.coin);
   //   this.setState(oldState => {
   //     return { score: oldState + 3 };
   //   })
