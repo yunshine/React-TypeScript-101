@@ -40,19 +40,26 @@
   margin: 5px 2px 2px 2px;
   letter-spacing: 1px;
   outline: none;
-  background: #ffc107;
-  color: #fff;
-  box-shadow: 0 6px #ff9800;
+  background: rgb(153, 247, 237);
+  color: rgb(51, 51, 51);
+  /* box-shadow: 0 6px #ff9800; */
   border-radius: 5px;
   padding-top: 4px;
 }
 
 .Hangman button:hover {
-  background-color: #ff9800;
+  background-color: turquoise;
 }
 
 .Hangman button:disabled {
   background: #bdbdbd;
   color: #eeeeee;
   box-shadow: 0 6px #9e9e9e;
+}
+
+#reset {
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
