@@ -2,8 +2,9 @@
   height: 100px;
   width: 100px;
   background-color: darkgray;
+  transition: 0.3s;
 }
 
 .Cell-lit {
-  background-color: white;
+  background-color: cyan;
 }
