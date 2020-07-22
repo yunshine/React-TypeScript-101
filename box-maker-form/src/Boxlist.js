@@ -17,8 +17,8 @@ class Boxlist extends Component {
     console.log("the new state is: ", this.state);
   }
 
-  deleteBox(evt) {
-    evt.preventDefault();
+  deleteBox(id) {
+    // evt.preventDefault();
     console.log("deleting box...");
     this.setState({ height: "", width: "", backgroundColor: "" });
     console.log("the new state after deleting is: ", this.state);
@@ -28,6 +28,7 @@ class Boxlist extends Component {
   render() {
     let height = `${this.state.height}px`;
     let width = `${this.state.width}px`;
+
       return (
       <div className="Boxlist">
         {/* <h1>{this.state.Boxlist}</h1>
