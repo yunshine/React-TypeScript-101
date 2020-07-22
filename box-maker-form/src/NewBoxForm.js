@@ -10,7 +10,7 @@ class NewBoxForm extends Component {
   }
   handleSubmit(evt) {
     evt.preventDefault();
-    // this.props.addItem(this.state);
+    this.props.createBox(this.state);
     this.setState({ height: "", width: "", backgroundColor: "" });
   }
   handleChange(evt) {
