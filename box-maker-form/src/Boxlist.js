@@ -8,12 +8,20 @@ class Boxlist extends Component {
     super(props);
     this.state = { height: "", width: "", backgroundColor: ""};
     this.createBox = this.createBox.bind(this);
+    this.deleteBox = this.deleteBox.bind(this);
   }
 
   createBox(newBoxInfo) {
     console.log("creating box...", newBoxInfo.height);
     this.setState({ height: newBoxInfo.height, width: newBoxInfo.width, backgroundColor: newBoxInfo.backgroundColor });
     console.log("the new state is: ", this.state);
+  }
+
+  deleteBox(evt) {
+    evt.preventDefault();
+    console.log("deleting box...");
+    this.setState({ height: "", width: "", backgroundColor: "" });
+    console.log("the new state after deleting is: ", this.state);
   }
 
 
@@ -26,7 +34,7 @@ class Boxlist extends Component {
         <h1>{this.props.Boxlist}</h1> */}
         <h1>The Ultimate Box Maker</h1>
         <NewBoxForm createBox={this.createBox}/>
-        <Box height={height} width={width} color={this.state.backgroundColor} />
+        <Box height={height} width={width} color={this.state.backgroundColor} deleteBox={this.deleteBox} />
       </div>
     );
   }
