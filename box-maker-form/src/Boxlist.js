@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
+import Box from './Box';
+import NewBoxForm from './NewBoxForm';
 import './Boxlist.css';
 
 class Boxlist extends Component {
-  // static defaultProps = {
-  //   key: value,
+  constructor(props) {
+    super(props);
+    this.state = { height: "320px", width: "320px", backgroundColor: "turquoise" };
+    // this.addItem = this.addItem.bind(this);
+  }
+  // addItem(item) {
+  //   let newItem = { ...item, id: uuid() };
+  //   this.setState(state => ({
+  //     items: [...state.items, newItem]
+  //   }));
   // }
-  // constructor(props) {
-  //   super(props);
-    // this.state = { key: value };
-    // this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // Boxlist() {
-  //   this.setState({ key: value });
-  // }
-
-  // handleClick() {
-  //   this.newFunction();
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }
-  // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
       return (
@@ -29,6 +22,8 @@ class Boxlist extends Component {
         {/* <h1>{this.state.Boxlist}</h1>
         <h1>{this.props.Boxlist}</h1> */}
         <h1>The Ultimate Box Maker</h1>
+        <NewBoxForm />
+        <Box height={this.state.height} width={this.state.width} color={this.state.backgroundColor} />
       </div>
     );
   }
