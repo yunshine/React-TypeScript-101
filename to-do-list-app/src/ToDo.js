@@ -9,6 +9,11 @@ class ToDo extends Component {
     this.handleRemove = this.handleRemove.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleEditUpdate = this.handleEditUpdate.bind(this);
+    this.handleToggleMark = this.handleToggleMark.bind(this);
+  }
+
+  handleToggleMark(evt) {
+    this.props.toggleMark(this.props.id);
   }
 
   handleRemove(evt) {
@@ -45,7 +50,7 @@ class ToDo extends Component {
     } else {
       result = 
         <div className="ToDo">
-          <li className="">{this.props.item} </li>
+          <li onClick={this.handleToggleMark} id={this.props.id} className={this.props.completed ? 'completed' : ''}>{this.props.item}</li>
           <button onClick={this.handleEdit}>Edit</button>
           <button onClick={this.handleRemove}>X</button>
         </div>;

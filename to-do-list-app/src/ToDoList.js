@@ -15,6 +15,7 @@ class ToDoList extends Component {
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.update = this.update.bind(this);
+    this.toggleMark = this.toggleMark.bind(this);
   }
 
   addItem(item) {
@@ -40,9 +41,19 @@ class ToDoList extends Component {
     this.setState({ toDoItems: updatedToDoItems });
   }
 
+  toggleMark(id) {
+    const updatedToDoItems = this.state.toDoItems.map(toDoItem => {
+      if(toDoItem.id === id) {
+        return { ...toDoItem, completed: !toDoItem.completed };
+      }
+      return toDoItem;
+    });
+    this.setState({ toDoItems: updatedToDoItems });
+  }
+
   render() {
     const toDoItems = this.state.toDoItems.map(item => {
-      return <ToDo key={item.item}  id={item.item} item={item.item} className="" removeItem={this.removeItem} update={this.update} />;
+      return <ToDo key={item.item}  id={item.item} item={item.item} className="" removeItem={this.removeItem} update={this.update} completed={item.completed}  toggleMark={this.toggleMark} />;
     })
 
     return (
