@@ -2,13 +2,22 @@ import React, { Component } from 'react'; // imrc is the shortcut...
 import './ToDo.css';
 
 class ToDo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(evt) {
+    evt.preventDefault();
+    this.props.removeItem(this.props.id);
+  }
 
   render() {
-      return (
+    return (
       <div className="ToDo">
-        <li key={this.props.item} className="">{this.props.item}</li>
+        <li className="">{this.props.item} </li>
         <button>Edit</button>
-        <button>X</button>
+        <button onClick={this.handleClick}>X</button>
       </div>
     );
   }
