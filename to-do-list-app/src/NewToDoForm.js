@@ -2,33 +2,39 @@ import React, { Component } from 'react'; // imrc is the shortcut...
 import './NewToDoForm.css';
 
 class NewToDoForm extends Component {
-  // static defaultProps = {
-  //   key: value,
-  // }
-  // constructor(props) {
-  //   super(props);
-    // this.state = { key: value };
-    // this.handleClick = this.handleClick.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { item: "" };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  // NewToDoForm() {
-  //   this.setState({ key: value });
-  // }
+  handleSubmit(evt) {
+    evt.preventDefault();
+    this.props.addItem(this.state);
+    this.setState({ name: "", qty: "" });
+  }
 
-  // handleClick() {
-  //   this.newFunction();
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }
-  // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
+  }
 
   render() {
       return (
       <div className="NewToDoForm">
-        {/* <h1>{this.state.NewToDoForm}</h1>
-        <h1>{this.props.NewToDoForm}</h1> */}
-        <h1>This is the NewToDoForm component...</h1>
+        <h1>Add a New To Do Item</h1>
+        <form onSubmit={this.handleSubmit}>
+        <label htmlFor='item'>New Item to Add: </label>
+        <input
+          id='item'
+          name='item'
+          value={this.state.item}
+          onChange={this.handleChange}
+        />
+        <button>Add To Your List</button>
+      </form>
       </div>
     );
   }

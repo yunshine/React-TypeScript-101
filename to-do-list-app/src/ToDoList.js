@@ -11,14 +11,21 @@ class ToDoList extends Component {
         { item: "Wash Dishes", completed: false }
       ]
     };
-    // this.addItem = this.addItem.bind(this);
+    this.addItem = this.addItem.bind(this);
+  }
+
+  addItem(item) {
+    let newItem = { ...item, completed: false };
+    this.setState(state => ({
+      toDoItems: [...state.toDoItems, newItem]
+    }));
   }
 
   renderItems() {
     return (
       <ul>
         {this.state.toDoItems.map(item => (
-          <li key={item.item} class="">
+          <li key={item.item} className="">
             {item.item}
           </li>
         ))}
@@ -30,11 +37,10 @@ class ToDoList extends Component {
       return (
       <div className="ToDoList">
               <h1>My To Do List</h1>
+            
               {this.renderItems()}
 
-              {/* <ShoppingListForm addItem={this.addItem} />
-              <ToDo />
-              <NewToDoForm /> */}
+              <NewToDoForm addItem={this.addItem} />
       </div>
     );
   }
