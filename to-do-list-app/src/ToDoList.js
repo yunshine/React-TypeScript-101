@@ -14,6 +14,7 @@ class ToDoList extends Component {
     };
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
+    this.update = this.update.bind(this);
   }
 
   addItem(item) {
@@ -29,9 +30,19 @@ class ToDoList extends Component {
     })
   } // or, filter by item.id???
 
+  update(id, updatedItem) {
+    const updatedToDoItems = this.state.toDoItems.map(toDoItem => {
+      if(toDoItem.id === id) {
+        return { ...toDoItem, item: updatedItem };
+      }
+      return toDoItem;
+    });
+    this.setState({ toDoItems: updatedToDoItems });
+  }
+
   render() {
     const toDoItems = this.state.toDoItems.map(item => {
-      return <ToDo key={item.item}  id={item.item} item={item.item} className="" removeItem={this.removeItem} />;
+      return <ToDo key={item.item}  id={item.item} item={item.item} className="" removeItem={this.removeItem} update={this.update} />;
     })
 
     return (
