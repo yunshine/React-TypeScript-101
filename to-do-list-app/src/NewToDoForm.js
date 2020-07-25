@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
-import './NewToDoForm.css'; // make a CSS file for this component...
+import './NewToDoForm.css';
 
 class NewToDoForm extends Component {
   // static defaultProps = {
@@ -34,4 +34,4 @@ class NewToDoForm extends Component {
   }
 }
 
-export default NewToDoForm; /// connect this component to App.js...
+export default NewToDoForm;

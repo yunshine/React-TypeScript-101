@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
-import './ToDo.css'; // make a CSS file for this component...
+import './ToDo.css';
 
 class ToDo extends Component {
   // static defaultProps = {
@@ -34,4 +34,4 @@ class ToDo extends Component {
   }
 }
 
-export default ToDo; /// connect this component to App.js...
+export default ToDo;
