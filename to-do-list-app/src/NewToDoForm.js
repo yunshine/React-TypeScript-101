@@ -12,7 +12,7 @@ class NewToDoForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
     this.props.addItem(this.state);
-    this.setState({ name: "", qty: "" });
+    this.setState({ item: "", completed: false });
   }
 
   handleChange(evt) {

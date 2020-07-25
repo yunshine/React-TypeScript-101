@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 import NewToDoForm from './NewToDoForm';
+import ToDo from './ToDo';
 import './ToDoList.css';
 
 class ToDoList extends Component {
@@ -21,26 +22,16 @@ class ToDoList extends Component {
     }));
   }
 
-  renderItems() {
-    return (
-      <ul>
-        {this.state.toDoItems.map(item => (
-          <li key={item.item} className="">
-            {item.item}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
-      return (
-      <div className="ToDoList">
-              <h1>My To Do List</h1>
-            
-              {this.renderItems()}
+    const toDoItems = this.state.toDoItems.map(item => {
+      return <ToDo item={item.item} className="" />;
+    })
 
-              <NewToDoForm addItem={this.addItem} />
+    return (
+      <div className="ToDoList">
+        <h1>My To Do List</h1>
+        {toDoItems}
+        <NewToDoForm addItem={this.addItem} />
       </div>
     );
   }
