@@ -10,6 +10,7 @@ class Dice extends Component {
           val={d}
           locked={this.props.locked[idx]}
           idx={idx}
+          disabled={this.props.disbled}
           key={idx} />
       )}
     </div>

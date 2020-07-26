@@ -15,13 +15,12 @@ class Die extends Component {
   }
   
   render() {
-    let classes = `Die fa-5x fas fa-dice-${this.props.numberWords[this.props.val - 1]}`;
+    const { numberWords, locked, val, disabled, rolling } = this.props;
+    let classes = `Die fas fa-dice-${numberWords[val - 1]} fa-5x `;
+    if (locked) classes += "Die-locked";
+    if (rolling) classes += "Die-rolling";
     return (
-      <i
-        className={classes}
-        // style={{ backgroundColor: this.props.locked ? "grey" : "black" }}
-        onClick={this.handleClick}
-         />
+      <i className={classes} onClick={this.handleClick} disabled={disabled} />
     );
   }
 }
