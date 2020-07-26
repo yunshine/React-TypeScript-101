@@ -71,6 +71,7 @@ class Game extends Component {
   render() {
     return (
       <div className='Game'>
+        {/* <i class="fas fa-dice-six"></i> */}
         <header className='Game-header'>
           <h1 className='App-title'>Yahtzee!</h1>
 
