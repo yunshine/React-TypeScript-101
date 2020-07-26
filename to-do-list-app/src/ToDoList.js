@@ -7,10 +7,7 @@ class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toDoItems: [
-        { item: "Fold Laundry", completed: false, id: "Fold Laundry" },
-        { item: "Wash Dishes", completed: false, id: "Wash Dishes" }
-      ]
+      toDoItems: []
     };
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
