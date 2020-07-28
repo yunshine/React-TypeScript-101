@@ -1,16 +1,24 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
 import './Deck.css'; // make a CSS file for this component...
+import axios from 'axios';
+
+const API_URL = "https://deckofcardsapi.com/api/deck/new/shuffle";
 
 class Deck extends Component {
   // static defaultProps = {
   //   key: value,
   // }
-  // constructor(props) {
-  //   super(props);
-    // this.state = { key: value };
+
+  constructor(props) {
+    super(props);
+    this.state = { deck: null };
     // this.handleClick = this.handleClick.bind(this);
-  // }
+  }
+
+  componentDidMount() {
+
+  }
 
   // Deck() {
   //   this.setState({ key: value });
