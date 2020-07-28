@@ -16,8 +16,9 @@ class Deck extends Component {
     // this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-
+  async componentDidMount() {
+    let deck = await axios.get(API_URL);
+    this.setState({ deck: deck.data });
   }
 
   // Deck() {
