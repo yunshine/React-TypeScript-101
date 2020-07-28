@@ -1,10 +1,10 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
-import './-something-.css'; // make a CSS file for this component...
+import './JokeList.css'; // make a CSS file for this component...
 
 // npm install axios (for API requests) in terminal???
 
-class -something- extends Component {
+class JokeList extends Component {
   // static defaultProps = {
   //   key: value,
   // }
@@ -14,7 +14,7 @@ class -something- extends Component {
     // this.handleClick = this.handleClick.bind(this);
   // }
 
-  // -something-() {
+  // JokeList() {
   //   this.setState({ key: value });
   // }
 
@@ -28,13 +28,13 @@ class -something- extends Component {
 
   render() {
     return (
-      <div className="-something-">
-        {/* <h1>{this.state.-something-}</h1>
-        <h1>{this.props.-something-}</h1> */}
-        <h1>This is the -something- component...</h1>
+      <div className="JokeList">
+        {/* <h1>{this.state.JokeList}</h1>
+        <h1>{this.props.JokeList}</h1> */}
+        <h1>This is the JokeList component...</h1>
       </div>
     );
   }
 }
 
-export default -something-; /// connect this component to App.js...
+export default JokeList;
