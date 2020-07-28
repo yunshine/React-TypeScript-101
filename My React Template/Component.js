@@ -25,7 +25,7 @@ class -something- extends Component {
   // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
-      return (
+    return (
       <div className="-something-">
         {/* <h1>{this.state.-something-}</h1>
         <h1>{this.props.-something-}</h1> */}

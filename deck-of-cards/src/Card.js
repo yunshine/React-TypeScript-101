@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
-// import -something-, { -something- } from './-something-';
-import './Card.css'; // make a CSS file for this component...
+import './Card.css';
 
 class Card extends Component {
   // static defaultProps = {
@@ -25,14 +24,10 @@ class Card extends Component {
   // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
-      return (
-      <div className="Card">
-        {/* <h1>{this.state.Card}</h1>
-        <h1>{this.props.Card}</h1> */}
-        <h1>This is the Card component...</h1>
-      </div>
+    return (
+        <img className='Card' src={this.props.image} alt={this.props.name} key={this.props.key} />
     );
   }
 }
 
-export default Card; /// connect this component to App.js...
+export default Card;

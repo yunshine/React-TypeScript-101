@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from './Card';
 import './Deck.css';
 import axios from 'axios';
 
@@ -39,9 +40,13 @@ class Deck extends Component {
 
 
   render() {
-      return (
+    const cards = this.state.drawn.map(c => (
+      <Card key={c.id} image={c.image} name={c.name} />
+    ));
+    return (
       <div className="Deck">
         <h1>This is the Deck component...</h1>
+        {cards}
         <button onClick={this.getCard}>Deal a New Card!</button>
       </div>
     );
