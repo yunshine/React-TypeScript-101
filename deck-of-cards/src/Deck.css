@@ -1,3 +1,27 @@
+.Deck {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .Deck-cardArea {
   margin-top: 80px;
+}
+
+.Deck button {
+  background-color: turquoise;
+  border: none;
+  outline: none;
+  padding: 16px;
+  color: white;
+  transition: 0.3s;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.Deck button:hover {
+  cursor: pointer;
+  background-color: rgb(64, 197, 184);
+  border: none;
+  outline: none;
+
 }
