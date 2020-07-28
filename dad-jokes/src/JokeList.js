@@ -1,18 +1,20 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
-import './JokeList.css'; // make a CSS file for this component...
+import './JokeList.css';
+import axios from 'axios';
 
 // npm install axios (for API requests) in terminal???
 
 class JokeList extends Component {
-  // static defaultProps = {
-  //   key: value,
-  // }
-  // constructor(props) {
-  //   super(props);
-    // this.state = { key: value };
+  static defaultProps = {
+    numJokesToGet: 10,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = { jokes: [] };
     // this.handleClick = this.handleClick.bind(this);
-  // }
+  }
 
   // JokeList() {
   //   this.setState({ key: value });
@@ -26,12 +28,26 @@ class JokeList extends Component {
   // }
   // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
+  async componentDidMount() {
+    let jokes = [];
+    while (jokes.length < this.props.numJokesToGet) {
+      let res = await axios.get('https://icanhazdadjoke.com/', {headers: {Accept: 'application/json'}});
+      jokes.push(res.data.joke);
+    }
+    console.log("here we go...")
+    console.log(jokes);
+    this.setState({ jokes: jokes });
+  }
+
   render() {
+
     return (
       <div className="JokeList">
-        {/* <h1>{this.state.JokeList}</h1>
-        <h1>{this.props.JokeList}</h1> */}
         <h1>This is the JokeList component...</h1>
+        <div className="JokeList-jokes">
+          {this.state.jokes.map(j => (
+          <div>{j}</div>))}
+        </div>
       </div>
     );
   }

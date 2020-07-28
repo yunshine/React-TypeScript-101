@@ -7,7 +7,8 @@ import './-something-.css'; // make a CSS file for this component...
 class -something- extends Component {
   // static defaultProps = {
   //   key: value,
-  // }
+  // };
+  
   // constructor(props) {
   //   super(props);
     // this.state = { key: value };
