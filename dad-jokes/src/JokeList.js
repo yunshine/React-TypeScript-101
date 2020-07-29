@@ -15,23 +15,17 @@ class JokeList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { jokes: [] };
-    // this.handleClick = this.handleClick.bind(this);
+    this.state = { jokes: JSON.parse(window.localStorage.getItem("jokes")) || [] };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  // JokeList() {
-  //   this.setState({ key: value });
-  // }
+  componentDidMount() {
+    if(this.state.jokes.length === 0) {
+      this.getJokes();
+    }
+  }
 
-  // handleClick() {
-  //   this.newFunction();
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }
-  // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
-
-  async componentDidMount() {
+  async getJokes() {
     let jokes = [];
     while (jokes.length < this.props.numJokesToGet) {
       let res = await axios.get('https://icanhazdadjoke.com/', {headers: {Accept: 'application/json'}});
@@ -40,6 +34,7 @@ class JokeList extends Component {
     // console.log("here we go...")
     // console.log(jokes);
     this.setState({ jokes: jokes });
+    window.localStorage.setItem("jokes", JSON.stringify(jokes))
   }
 
   handleVote(id, delta) {
