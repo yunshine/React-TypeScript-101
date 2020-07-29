@@ -73,6 +73,7 @@ class JokeList extends Component {
         <h1 className="JokeList-title">Loading...</h1>
       </div>)
     }
+    let jokes = this.state.jokes.sort((a,b) => b.votes - a.votes);
     return (
       <div className="JokeList">
         <div className="JokeList-sidebar">
@@ -81,7 +82,7 @@ class JokeList extends Component {
           <button className='JokeList-getmore' onClick={this.handleClick}>Get New Jokes</button>
         </div>
         <div className="JokeList-jokes">
-          {this.state.jokes.map(j => (
+          {jokes.map(j => (
             // <div>{j.joke} - {j.votes}</div>
             <Joke key={j.id} text={j.text} votes={j.votes} upvote={() => this.handleVote(j.id, 1)} downvote={() => this.handleVote(j.id, -1)} />
           ))}
