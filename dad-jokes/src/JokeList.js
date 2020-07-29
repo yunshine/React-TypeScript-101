@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
+import Joke from './Joke';
 // import -something-, { -something- } from './-something-';
 import './JokeList.css';
 import axios from 'axios';
@@ -32,10 +33,10 @@ class JokeList extends Component {
     let jokes = [];
     while (jokes.length < this.props.numJokesToGet) {
       let res = await axios.get('https://icanhazdadjoke.com/', {headers: {Accept: 'application/json'}});
-      jokes.push(res.data.joke);
+      jokes.push({text: res.data.joke, votes: 0});
     }
-    console.log("here we go...")
-    console.log(jokes);
+    // console.log("here we go...")
+    // console.log(jokes);
     this.setState({ jokes: jokes });
   }
 
@@ -50,7 +51,9 @@ class JokeList extends Component {
         </div>
         <div className="JokeList-jokes">
           {this.state.jokes.map(j => (
-          <div>{j}</div>))}
+            // <div>{j.joke} - {j.votes}</div>
+            <Joke text={j.joke} votes={j.votes} />
+          ))}
         </div>
       </div>
     );
