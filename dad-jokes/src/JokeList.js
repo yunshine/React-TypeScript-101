@@ -33,8 +33,11 @@ class JokeList extends Component {
     }
     // console.log("here we go...")
     // console.log(jokes);
-    this.setState({ jokes: jokes });
-    window.localStorage.setItem("jokes", JSON.stringify(jokes))
+    this.setState(st => ({
+     jokes: [...st.jokes, ...jokes] 
+    }), 
+      () =>  window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
+    );
   }
 
   handleVote(id, delta) {
@@ -42,8 +45,13 @@ class JokeList extends Component {
       st => ({
         jokes: st.jokes.map(j => 
           j.id === id ? {...j, votes: j.votes + delta} : j)
-      })
-    )
+      }),
+      () =>  window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
+    );
+  }
+
+  handleClick() {
+    this.getJokes();
   }
 
   render() {
