@@ -57,7 +57,7 @@ class JokeList extends Component {
 
   render() {
     if (this.state.loading === true) {
-      return (<div className="spinner">
+      return (<div className="JokeList-spinner">
         <i className="far fa-8x fa-laugh fa-spin" />
         <h1 className="JokeList-title">Loading...</h1>
       </div>)
