@@ -43,7 +43,10 @@ class JokeList extends Component {
 
     return (
       <div className="JokeList">
-        <h1>This is the JokeList component...</h1>
+        <div className="JokeList-sidebar">
+          <h1 className="JokeList-title"><span className="">Dad</span>Jokes</h1>
+          <img src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
+        </div>
         <div className="JokeList-jokes">
           {this.state.jokes.map(j => (
           <div>{j}</div>))}
