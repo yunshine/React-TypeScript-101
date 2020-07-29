@@ -5,38 +5,20 @@ import './Joke.css'; // make a CSS file for this component...
 // npm install axios (for API requests) in terminal???
 
 class Joke extends Component {
-  // static defaultProps = {
-  //   key: value,
-  // };
-  
-  // constructor(props) {
-  //   super(props);
-    // this.state = { key: value };
-    // this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // Joke() {
-  //   this.setState({ key: value });
-  // }
-
-  // handleClick() {
-  //   this.newFunction();
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }
-  // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
     return (
       <div className="Joke">
         <div className="Joke-buttons">
           <i className='fas fa-arrow-up' onClick={this.props.upvote}></i>
-          <span>{this.props.votes}</span>
+          <span className="Joke-votes">{this.props.votes}</span>
           <i className='fas fa-arrow-down' onClick={this.props.downvote}></i>
         </div>
         <div className="Joke-text">
           {this.props.text}
+        </div>
+        <div className="Joke-smiley">
+          <i class="em em-rolling_on_the_floor_laughing" aria-role="presentation" aria-label="ROLLING ON THE FLOOR LAUGHING"></i>
         </div>
       </div>
     );
