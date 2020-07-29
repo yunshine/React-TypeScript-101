@@ -40,7 +40,7 @@ class Joke extends Component {
       return "em em-angry";
     }
   }
-  
+
   render() {
     return (
       <div className="Joke">
@@ -53,7 +53,7 @@ class Joke extends Component {
           {this.props.text}
         </div>
         <div className="Joke-smiley">
-          <i class="em em-rolling_on_the_floor_laughing" aria-role="presentation" aria-label="ROLLING ON THE FLOOR LAUGHING"></i>
+          <i className={this.getEmoji()}></i>
         </div>
       </div>
     );
