@@ -2,6 +2,7 @@ import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
 import './-something-.css'; // make a CSS file for this component...
 
+// import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
 // npm install axios (for API requests) in terminal???
 
 class -something- extends Component {

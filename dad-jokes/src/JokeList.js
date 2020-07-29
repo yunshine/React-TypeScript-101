@@ -43,7 +43,12 @@ class JokeList extends Component {
   }
 
   handleVote(id, delta) {
-
+    this.setState(
+      st => ({
+        jokes: st.jokes.map(j => 
+          j.id === id ? {...j, votes: j.votes + delta} : j)
+      })
+    )
   }
 
   render() {
@@ -57,7 +62,7 @@ class JokeList extends Component {
         <div className="JokeList-jokes">
           {this.state.jokes.map(j => (
             // <div>{j.joke} - {j.votes}</div>
-            <Joke key={j.id} text={j.text} votes={j.votes} />
+            <Joke key={j.id} text={j.text} votes={j.votes} upvote={() => this.handleVote(j.id, 1)} downvote={() => this.handleVote(j.id, -1)} />
           ))}
         </div>
       </div>
