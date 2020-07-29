@@ -35,12 +35,12 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* .JokeList-sidebar img:hover {
+.JokeList-sidebar img:hover {
   animation-name: shake-slow;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
-} */
+}
 
 .JokeList-jokes {
   height: 90%;
@@ -84,7 +84,7 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* @keyframes shake-slow {
+@keyframes shake-slow {
   0% {
     transform: translate(0px, 0px) rotate(0deg);
   }
@@ -235,4 +235,4 @@
   98% {
     transform: translate(10px, -9px) rotate(2.5deg);
   }
-} */
+}

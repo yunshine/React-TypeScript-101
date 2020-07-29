@@ -47,21 +47,21 @@
   box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* .Joke-smiley:hover {
+.Joke-smiley:hover {
   animation-name: spin;
   animation-duration: 0.7s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
-} */
+}
 
-/* .fa-arrow-up:hover {
+.fa-arrow-up:hover {
   animation-name: move-up;
   animation-duration: 0.7s;
   animation-timing-function: ease-out;
   color: #8bc34a;
-} */
+}
 
-/* @keyframes move-up {
+@keyframes move-up {
   0%,
   50%,
   100% {
@@ -71,16 +71,16 @@
   75% {
     transform: translateY(-3px);
   }
-} */
+}
 
-/* .fa-arrow-down:hover {
+.fa-arrow-down:hover {
   animation-name: move-down;
   animation-duration: 0.7s;
   animation-timing-function: ease-out;
   color: #f44336;
-} */
+}
 
-/* @keyframes move-down {
+@keyframes move-down {
   0%,
   50%,
   100% {
@@ -90,9 +90,9 @@
   75% {
     transform: translateY(3px);
   }
-} */
+} 
 
-/* @keyframes spin {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -108,4 +108,4 @@
   100% {
     transform: rotate(0deg);
   }
-} */
+}
