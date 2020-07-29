@@ -3,7 +3,8 @@ import Joke from './Joke';
 // import -something-, { -something- } from './-something-';
 import './JokeList.css';
 import axios from 'axios';
-import uuid from 'uuid/v4';
+// import uuid from "uuid/v4"
+import { v4 as uuidv4 } from 'uuid';
 
 // npm install axios (for API requests) in terminal???
 
@@ -34,7 +35,7 @@ class JokeList extends Component {
     let jokes = [];
     while (jokes.length < this.props.numJokesToGet) {
       let res = await axios.get('https://icanhazdadjoke.com/', {headers: {Accept: 'application/json'}});
-      jokes.push({ text: res.data.joke, votes: 0, id: uuid() });
+      jokes.push({ text: res.data.joke, votes: 0, id: uuidv4(), });
     }
     // console.log("here we go...")
     // console.log(jokes);
