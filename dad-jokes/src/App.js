@@ -1,6 +1,6 @@
 import React from 'react';
 import JokeList from './JokeList';
-import Joke from './Joke';
+// import Joke from './Joke';
 import './App.css';
 
 function App() {

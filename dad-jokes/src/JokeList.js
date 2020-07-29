@@ -3,6 +3,7 @@ import Joke from './Joke';
 // import -something-, { -something- } from './-something-';
 import './JokeList.css';
 import axios from 'axios';
+import uuid from 'uuid/v4';
 
 // npm install axios (for API requests) in terminal???
 
@@ -33,26 +34,29 @@ class JokeList extends Component {
     let jokes = [];
     while (jokes.length < this.props.numJokesToGet) {
       let res = await axios.get('https://icanhazdadjoke.com/', {headers: {Accept: 'application/json'}});
-      jokes.push({text: res.data.joke, votes: 0});
+      jokes.push({ text: res.data.joke, votes: 0, id: uuid() });
     }
     // console.log("here we go...")
     // console.log(jokes);
     this.setState({ jokes: jokes });
   }
 
-  render() {
+  handleVote(id, delta) {
 
+  }
+
+  render() {
     return (
       <div className="JokeList">
         <div className="JokeList-sidebar">
           <h1 className="JokeList-title"><span className="">Dad</span> Jokes</h1>
-          <img src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
+          <img src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' alt="an emoji"/>
           <button className='JokeList-getmore' onClick={this.handleClick}>Get New Jokes</button>
         </div>
         <div className="JokeList-jokes">
           {this.state.jokes.map(j => (
             // <div>{j.joke} - {j.votes}</div>
-            <Joke text={j.joke} votes={j.votes} />
+            <Joke key={j.id} text={j.text} votes={j.votes} />
           ))}
         </div>
       </div>
