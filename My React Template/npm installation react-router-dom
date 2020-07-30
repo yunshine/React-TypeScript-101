@@ -1,5 +1,5 @@
-create-react-app routed
+create-react-app my-app
 
-cd routed
+cd my-app
 
 npm installation react-router-dom
