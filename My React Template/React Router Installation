@@ -1,0 +1,5 @@
+create-react-app routed
+
+cd routed
+
+npm installation react-router-dom
