@@ -14,8 +14,8 @@ function App() {
       {/* <Switch> */}
         {/* use path="/" to assign a default page... */}
         {/* <Route exact path="/-something-" component={-something-} /> */}
-        {/* <Route exact path="/-something-" component={-something-} /> */}
-        {/* <Route exact path="/-something-" component={-something-} /> */}
+        {/* <Route exact path="/-something-" component={() => <-something- name='Muffins"> } /> */}
+        {/* <Route exact path="/-something-" render={() => <-something- name='Biscuit"> } /> */}
       {/* </Switch> */}
     </div>
   );
