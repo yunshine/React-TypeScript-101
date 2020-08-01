@@ -7,7 +7,10 @@ function App() {
   return (
     <div className="App">
       <h1>Testing App Component...</h1>
-      {/* <-something- /> */}
+      <VendingMachine />
+      <Chips />
+      <Soda />
+      <Sardines />
 
       {/* <NavLink exact activeClassName="active-link" to="/-something-">-some-text-here-</NavLink> */}
 
