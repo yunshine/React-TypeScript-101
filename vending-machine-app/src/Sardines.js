@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
 import './Sardines.css'; // make a CSS file for this component...
+import { NavLink } from 'react-router-dom';
 
 // import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
 // npm install axios (for API requests) in terminal???
@@ -34,6 +35,8 @@ class Sardines extends Component {
         {/* <h1>{this.state.Sardines}</h1>
         <h1>{this.props.Sardines}</h1> */}
         <h1>This is the Sardines component...</h1>
+        <br></br>
+        <NavLink exact activeClassName="active-link" to="/">Back to Vending Machine</NavLink>
       </div>
     );
   }

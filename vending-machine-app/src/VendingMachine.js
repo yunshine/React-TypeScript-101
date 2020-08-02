@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
 import './VendingMachine.css'; // make a CSS file for this component...
+import { NavLink } from 'react-router-dom';
+
 
 // import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
 // npm install axios (for API requests) in terminal???
@@ -34,6 +36,12 @@ class VendingMachine extends Component {
         {/* <h1>{this.state.VendingMachine}</h1>
         <h1>{this.props.VendingMachine}</h1> */}
         <h1>This is the VendingMachine component...</h1>
+        <br></br>
+        <NavLink exact activeClassName="active-link" to="/Chips">go to Chips</NavLink>
+        <br></br>
+        <NavLink exact activeClassName="active-link" to="/Soda">go to Soda</NavLink>
+        <br></br>
+        <NavLink exact activeClassName="active-link" to="/Sardines">go to Sardines</NavLink>
       </div>
     );
   }
