@@ -10,7 +10,7 @@ class NavBar extends Component {
     return (
       <div className="NavBar">
         <NavLink exact activeClassName="active-link" to="/">Home</NavLink>
-        <NavLink exact activeClassName="active-link" to="/Soda">Chips</NavLink>
+        <NavLink exact activeClassName="active-link" to="/Chips">Chips</NavLink>
         <NavLink exact activeClassName="active-link" to="/Soda">Soda</NavLink>
         <NavLink exact activeClassName="active-link" to="/Sardines">Sardines</NavLink>
       </div>
