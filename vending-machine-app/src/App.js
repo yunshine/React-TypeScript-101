@@ -1,6 +1,9 @@
 import React from 'react';
+import VendingMachine from './VendingMachine';
+import Chips from './Chips';
+import Soda from './Soda';
+import Sardines from './Sardines';
 // import { Route, Switch, NavLink } from 'react-router-dom';
-// import -something-, { -something- } from './-something-';
 import './App.css';
 
 function App() {
