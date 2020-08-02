@@ -3,17 +3,23 @@ import VendingMachine from './VendingMachine';
 import Chips from './Chips';
 import Soda from './Soda';
 import Sardines from './Sardines';
-// import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Testing App Component...</h1>
-      <VendingMachine />
+      <Switch>
+        <Route exact path="/" render={() => <VendingMachine />} />
+        <Route exact path="/soda" render={() => <Soda />} />
+        <Route exact path="/chips" render={() => <Chips />} />
+        <Route exact path="/sardines" render={() => <Sardines />} />
+      </Switch>
+
+      {/* <VendingMachine />
       <Chips />
       <Soda />
-      <Sardines />
+      <Sardines /> */}
 
       {/* <NavLink exact activeClassName="active-link" to="/-something-">-some-text-here-</NavLink> */}
 
