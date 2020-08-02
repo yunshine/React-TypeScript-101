@@ -2,6 +2,7 @@ import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
 import './Soda.css'; // make a CSS file for this component...
 import { NavLink } from 'react-router-dom';
+import Message from './Message';
 
 // import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
 // npm install axios (for API requests) in terminal???
@@ -32,11 +33,11 @@ class Soda extends Component {
   render() {
     return (
       <div className="Soda">
-        {/* <h1>{this.state.Soda}</h1>
-        <h1>{this.props.Soda}</h1> */}
-        <h1>This is the Soda component...</h1>
-        <br></br>
-        <NavLink exact activeClassName="active-link" to="/">Back to Vending Machine</NavLink>
+        <Message>
+          <h1>This is the Soda component...</h1>
+          <br></br>
+          <NavLink exact activeClassName="active-link" to="/">Back to Vending Machine</NavLink>
+        </Message>
       </div>
     );
   }
