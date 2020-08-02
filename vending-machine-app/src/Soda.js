@@ -34,7 +34,7 @@ class Soda extends Component {
     return (
       <div className="Soda">
         <Message>
-          <h1>This is the Soda component...</h1>
+          <h1>This is the Soda component wrapped in Message...</h1>
           <br></br>
           <NavLink exact activeClassName="active-link" to="/">Back to Vending Machine</NavLink>
         </Message>

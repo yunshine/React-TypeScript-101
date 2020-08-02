@@ -36,7 +36,7 @@ class Chips extends Component {
         {/* <h1>{this.state.Chips}</h1>
         <h1>{this.props.Chips}</h1> */}
         <Message>
-          <h1>This is the Chips component...</h1>
+          <h1>This is the Chips component wrapped in Message...</h1>
           <br></br>
           <NavLink exact activeClassName="active-link" to="/">Back to Vending Machine</NavLink>
         </Message>

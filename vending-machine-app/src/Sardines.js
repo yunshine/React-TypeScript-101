@@ -13,7 +13,7 @@ class Sardines extends Component {
     return (
       <div className="Sardines">
         <Message>
-          <h1>This is the Sardines component...</h1>
+          <h1>This is the Sardines component wrapped in Message...</h1>
           <br></br>
           <NavLink exact activeClassName="active-link" to="/">Back to Vending Machine</NavLink>
         </Message>
