@@ -33,7 +33,7 @@ class DogDetails extends Component {
     let { dog } = this.props;
     return (
       <div className="container">
-        <div className="DogDetails row">
+        <div className="DogDetails row justify-content-center mt-3">
           <div className="col-11 col-lg-5">
             <div className="card DogDetails-card">
               <img src={dog.src} alt={dog.name} className="card-img-top" />
@@ -47,7 +47,7 @@ class DogDetails extends Component {
                 ))}
               </ul>
               <div className="card-body">
-                <Link to="/dogs">Go Back</Link>
+                <Link to="/dogs" className="btn btn-info">Go Back</Link>
               </div>
             </div>
           </div>
