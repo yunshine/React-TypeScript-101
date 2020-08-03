@@ -32,9 +32,7 @@ class DogDetails extends Component {
   render() {
     return (
       <div className="DogDetails">
-        {/* <h1>{this.state.DogDetails}</h1>
-        <h1>{this.props.DogDetails}</h1> */}
-        <h1>This is the DogDetails component...</h1>
+        <h1>{this.props.dog.name}</h1>
       </div>
     );
   }
