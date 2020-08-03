@@ -1,12 +1,12 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
-import './-something-.css'; // make a CSS file for this component..
+import './DogDetails.css'; // make a CSS file for this component..
 // import { Route, Switch, NavLink } from 'react-router-dom';
 
 // import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
 // npm install axios (for API requests) in terminal???
 
-class -something- extends Component {
+class DogDetails extends Component {
   // static defaultProps = {
   //   key: value,
   // };
@@ -17,7 +17,7 @@ class -something- extends Component {
     // this.handleClick = this.handleClick.bind(this);
   // }
 
-  // -something-() {
+  // DogDetails() {
   //   this.setState({ key: value });
   // }
 
@@ -31,13 +31,13 @@ class -something- extends Component {
 
   render() {
     return (
-      <div className="-something-">
-        {/* <h1>{this.state.-something-}</h1>
-        <h1>{this.props.-something-}</h1> */}
-        <h1>This is the -something- component...</h1>
+      <div className="DogDetails">
+        {/* <h1>{this.state.DogDetails}</h1>
+        <h1>{this.props.DogDetails}</h1> */}
+        <h1>This is the DogDetails component...</h1>
       </div>
     );
   }
 }
 
-export default -something-; /// connect this component to App.js...
+export default DogDetails; /// connect this component to App.js...
