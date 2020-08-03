@@ -1,33 +1,8 @@
-import React, { Component } from 'react'; // imrc is the shortcut...
-// import -something-, { -something- } from './-something-';
+import React, { Component } from 'react';
 import './DogList.css'; // make a CSS file for this component..
-// import { Route, Switch, NavLink } from 'react-router-dom';
-
-// import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
-// npm install axios (for API requests) in terminal???
+import { Link } from 'react-router-dom';
 
 class DogList extends Component {
-  // static defaultProps = {
-  //   key: value,
-  // };
-  
-  // constructor(props) {
-  //   super(props);
-    // this.state = { key: value };
-    // this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // DogList() {
-  //   this.setState({ key: value });
-  // }
-
-  // handleClick() {
-  //   this.newFunction();
-  //   this.setState(oldState => {
-  //     return { score: oldState + 3 };
-  //   })
-  // }
-  // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
     return (
@@ -36,7 +11,9 @@ class DogList extends Component {
         {this.props.dogs.map(d => (
           <div className="Dog col-md-6 col-lg-4 text-center" key={d.name}>
             <img src={d.src} alt={d.name} />
-            <h3>{d.name}</h3>
+            <Link to={`/dogs/${d.name}`}>
+              <h3>{d.name}</h3>
+            </Link>
           </div>
         ))}
         </div>
@@ -45,4 +22,4 @@ class DogList extends Component {
   }
 }
 
-export default DogList; /// connect this component to App.js...
+export default DogList; 
