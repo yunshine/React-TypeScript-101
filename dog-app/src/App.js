@@ -1,9 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react'; // imrc is the shortcut...
 import { Route, Switch, NavLink } from 'react-router-dom';
+import DogList from './DogList';
 // import -something-, { -something- } from './-something-';
 import './App.css';
+import whiskey from './images/whiskey.jpg';
+import hazel from './images/hazel.jpg';
+import tubby from './images/tubby.jpg';
 
-function App() {
+class App extends Component {
+  static defaultProps = {
+    dogs: [
+      {
+        name: "Whiskey",
+        age: 5,
+        src: whiskey,
+        facts: [
+          "Whiskey loves eating popcorn.",
+          "Whiskey is a terrible guard dog.",
+          "Whiskey wants to cuddle with you!"
+        ]
+      },
+      {
+        name: "Hazel",
+        age: 3,
+        src: hazel,
+        facts: [
+          "Hazel has soooo much energy!",
+          "Hazel is highly intelligent.",
+          "Hazel loves people more than dogs."
+        ]
+      },
+      {
+        name: "Tubby",
+        age: 4,
+        src: tubby,
+        facts: [
+          "Tubby is not the brightest dog",
+          "Tubby does not like walks or exercise.",
+          "Tubby loves eating food."
+        ]
+      }
+    ]
+  }
+
+  render() {
   return (
     <div className="App">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,9 +84,7 @@ function App() {
         </div>
       </nav>
       
-      <h1>Testing App Component...</h1>
-      <h1>Bootstrap Test...</h1>
-      <h1 className="display-1">Here is the test text...</h1>
+      <Route exact path="/dogs" render={() => <DogList dogs={this.props.dogs}/> } />
       {/* <-something- /> */}
 
       {/* <NavLink exact activeClassName="active-link" to="/-something-">-some-text-here-</NavLink> */}
@@ -59,6 +97,7 @@ function App() {
       {/* </Switch> */}
     </div>
   );
+}
 }
 
 export default App;
