@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import DogList from './DogList';
-import DogDetails from './DogDetails';
 import NavBar from './NavBar';
 import Routes from './Routes';
 import './App.css';
