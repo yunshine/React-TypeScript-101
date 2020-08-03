@@ -35,9 +35,12 @@ class DogList extends Component {
         <h1 className="display-1 text-center">This is the DogList component...</h1>
         <div className="container">
           <div className="row">
-            <div className="col-4 text-center">
-              <h1>asdkjfasldkfjsal</h1>
+          {this.props.dogs.map(d => (
+            <div className="Dog col-md-6 col-lg-4 text-center" key={d.name}>
+              <img src={d.src} alt={d.name} />
+              <h3>{d.name}</h3>
             </div>
+          ))}
           </div>
         </div>
       </div>
