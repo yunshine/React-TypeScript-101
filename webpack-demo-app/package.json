@@ -2,16 +2,16 @@
   "name": "code",
   "version": "1.0.0",
   "private": true,
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack  --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
-  },
-  "description": ""
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
 }
