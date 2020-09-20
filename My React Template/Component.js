@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; // imrc is the shortcut...
 // import -something-, { -something- } from './-something-';
 import './-something-.css'; // make a CSS file for this component..
+import { withStyles } from '@material-ui/styles';
+import styles from './styles/-something-Styles';
 // import { Route, Switch, NavLink } from 'react-router-dom';
 
 // import { v4 as uuidv4 } from 'uuid'; // for creating unique IDs with uuidv4();
@@ -30,7 +32,9 @@ class -something- extends Component {
   // => This is the way and the syntax to update an existing state, not:   this.setState({ score: this.state.score + 3 });
 
   render() {
+    // const { classes } = this.props;
     return (
+      // <div className={-something-}>
       <div className="-something-">
         {/* <h1>{this.state.-something-}</h1>
         <h1>{this.props.-something-}</h1> */}
@@ -41,3 +45,5 @@ class -something- extends Component {
 }
 
 export default -something-; /// connect this component to App.js...
+export default withStyles(styles)(-something-);
+
