@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <form>
+      <!-- connect the label to the input by using "for" and "id" -->
+      <!-- give a "name" so that a name is given to the input and the backend knows what it is -->
+      <!-- a "submit" or a button at the end of a form will submit the entire form -->
+      <!-- give a "value" when there isn't a text field for value to be put in such as for radio inputs so that the correct value is sent to the backend... -->
+      <!-- there are two different ways to create labels for inputs - see the email & password labels below for reference... -->
+
+      <h1>Register</h1>
+      <label for="first">First Name: </label>
+      <input type="text" id="first" name="first" placeholder="John" required />
+      <label for="last">Last Name: </label>
+      <input type="text" id="last" id="last" placeholder="Smith" required />
+
+      <div>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other" />
+      </div>
+
+      <div>
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your email"
+          required
+        />
+        <label>
+          <!-- this type of label syntax does NOT require a "for" or "id" like the other label syntax... -->
+          Password:
+          <input
+            type="password"
+            name="password"
+            placeholder="your password"
+            pattern=".{5,10}"
+            required
+            title="password must be between 5 to 10 characters"
+          />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Birthday:
+          <select name="month">
+            <option value="something...">Month</option>
+            <option value="something...">January</option>
+            <option value="something...">February</option>
+            <option value="something...">March</option>
+          </select>
+          <select name="day">
+            <option value="something...">Day</option>
+            <option value="something...">11</option>
+            <option value="something...">12</option>
+            <option value="something...">13</option>
+          </select>
+          <select name="year">
+            <option value="something...">Year</option>
+            <option value="something...">1985</option>
+            <option value="something...">1977</option>
+            <option value="something...">2018</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <label for="agree">
+          I agree to the terms and conditions
+          <input type="checkbox" id="agreed" name="agreed" />
+        </label>
+      </div>
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>
