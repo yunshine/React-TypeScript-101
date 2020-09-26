@@ -1,25 +1,30 @@
 let listItems = [
   { task: 'Finish App', completed: false },
   { task: 'Study Japanese', completed: false },
-  { task: 'Wash Dishes', completed: false },
+  { task: 'Wash Dishes', completed: true },
+  { task: 'Cook Dinner', completed: false },
+  { task: 'Pray', completed: true },
+  { task: 'Read Bible', completed: true },
 ];
 
 const list = document.querySelector('ul');
-
-list.style.color = 'red';
-// list.insertAdjacentHTML('beforeend', '<li>France (2 wins)</li>');
+const checkboxes = document.querySelectorAll('.checkbox');
 
 listItems.forEach((item) => {
-  console.log(item);
-  // list.innerHTML = `<li>${item.task}</li>`;
+  // console.log(item);
   list.insertAdjacentHTML(
     'beforeend',
     `<div class='listItem'>
       <div class='listItemLeft'>
-        <input type='checkbox' />
+        <input type='checkbox' class='checkbox' ${
+          item.completed ? 'checked' : ''
+        } />
         <li>${item.task}</li>
       </div>
       <i class="far fa-minus-square"></i>
       </div>`
   );
 });
+
+console.log(checkboxes);
+checkboxes.forEach((checkbox) => {});
