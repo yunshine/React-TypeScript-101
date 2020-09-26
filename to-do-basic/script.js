@@ -8,23 +8,27 @@ let listItems = [
 ];
 
 const list = document.querySelector('ul');
-const checkboxes = document.querySelectorAll('.checkbox');
 
-listItems.forEach((item) => {
-  // console.log(item);
-  list.insertAdjacentHTML(
-    'beforeend',
-    `<div class='listItem'>
+function displayItems() {
+  listItems.forEach((item) => {
+    list.insertAdjacentHTML(
+      'beforeend',
+      `<div class='listItem'>
       <div class='listItemLeft'>
-        <input type='checkbox' class='checkbox' ${
-          item.completed ? 'checked' : ''
-        } />
-        <li>${item.task}</li>
+      <input type='checkbox' class='checkbox' ${
+        item.completed ? 'checked' : ''
+      } />
+      <li>${item.task}</li>
       </div>
       <i class="far fa-minus-square"></i>
       </div>`
-  );
-});
+    );
+  });
+}
 
-console.log(checkboxes);
-checkboxes.forEach((checkbox) => {});
+displayItems();
+
+function toggleItemCompletion(e) {
+  console.log(e.target);
+}
+list.addEventListener('click', toggleItemCompletion);
