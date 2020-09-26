@@ -12,5 +12,14 @@ list.style.color = 'red';
 listItems.forEach((item) => {
   console.log(item);
   // list.innerHTML = `<li>${item.task}</li>`;
-  list.insertAdjacentHTML('beforeend', `<li>${item.task}</li>`);
+  list.insertAdjacentHTML(
+    'beforeend',
+    `<div class='listItem'>
+      <div class='listItemLeft'>
+        <input type='checkbox' />
+        <li>${item.task}</li>
+      </div>
+      <i class="far fa-minus-square"></i>
+      </div>`
+  );
 });
