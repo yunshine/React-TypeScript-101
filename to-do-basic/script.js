@@ -10,15 +10,15 @@ let listItems = [
 const list = document.querySelector('ul');
 
 function displayItems() {
-  listItems.forEach((item) => {
+  listItems.forEach((item, index) => {
     list.insertAdjacentHTML(
       'beforeend',
       `<div class='listItem'>
       <div class='listItemLeft'>
-      <input type='checkbox' class='checkbox' ${
+      <input type='checkbox' id=${index} class='checkbox' ${
         item.completed ? 'checked' : ''
       } />
-      <li>${item.task}</li>
+      <li>${index + 1}. ${item.task}</li>
       </div>
       <i class="far fa-minus-square"></i>
       </div>`
@@ -30,5 +30,11 @@ displayItems();
 
 function toggleItemCompletion(e) {
   console.log(e.target);
+  console.log(listItems);
+  if (e.target.matches('input')) {
+    console.log(e.target.id);
+    listItems[e.target.id].completed = !listItems[e.target.id].completed;
+    console.log(listItems);
+  }
 }
 list.addEventListener('click', toggleItemCompletion);
