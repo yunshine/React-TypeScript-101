@@ -7,8 +7,11 @@ let listItems = [
   { task: 'Read Bible', completed: true },
 ];
 
+// let listItems = [];
+
 const list = document.querySelector('ul');
 const form = document.querySelector('form');
+const deleteButtons = document.querySelectorAll('i');
 
 function displayItems() {
   listItems.forEach((item, index) => {
@@ -22,7 +25,7 @@ function displayItems() {
       } />
             <label for=${index}>${index + 1}. ${item.task}</label>
           </div>
-          <i class="far fa-minus-square"></i>
+          <i class="far fa-minus-square" id=deleteIndex(${index})></i>
         </>
       </div>`
     );
@@ -32,6 +35,9 @@ function displayItems() {
 displayItems();
 
 function toggleItemCompletion(e) {
+  if (e.target.matches('i')) {
+    alert('aldkfjaldkfj');
+  }
   if (e.target.matches('input')) {
     listItems[e.target.id].completed = !listItems[e.target.id].completed;
     console.log(listItems[e.target.id], e.target);
@@ -57,13 +63,20 @@ function addItem(e) {
       listItems.length
     }. ${text}</label>
         </div>
-        <i class="far fa-minus-square"></i>
+        <i class="far fa-minus-square"id=deleteIndex(${index})></i>
       </>
     </div>`
   );
 }
 
+function deleteItem() {
+  console.log(e.target);
+}
+
 list.addEventListener('click', toggleItemCompletion);
 form.addEventListener('submit', addItem);
+deleteButtons.forEach((button) => {
+  button.addEventListener('click', deleteItem);
+});
 
 // ${item.completed ? 'completed' : 'incomplete'}
