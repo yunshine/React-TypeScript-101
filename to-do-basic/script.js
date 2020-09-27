@@ -42,7 +42,9 @@ function toggleItemCompletion(e) {
 
 function addItem(e) {
   e.preventDefault();
-  alert('hi');
+  const text = this.querySelector('[name=toDoItem]').value;
+  console.log(e.target.value);
+  console.log(text);
 }
 
 list.addEventListener('click', toggleItemCompletion);
