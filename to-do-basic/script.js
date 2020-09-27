@@ -45,6 +45,22 @@ function addItem(e) {
   const text = this.querySelector('[name=toDoItem]').value;
   console.log(e.target.value);
   console.log(text);
+  listItems.push({ task: `${text}`, completed: false });
+  console.log(listItems);
+  list.insertAdjacentHTML(
+    'beforeend',
+    `<div class='listItem'>
+      <li>
+        <div class='listItemLeft'>
+          <input type='checkbox' id=${listItems.length - 1} class='checkbox' />
+          <label for=${listItems.length - 1}>${
+      listItems.length
+    }. ${text}</label>
+        </div>
+        <i class="far fa-minus-square"></i>
+      </>
+    </div>`
+  );
 }
 
 list.addEventListener('click', toggleItemCompletion);
