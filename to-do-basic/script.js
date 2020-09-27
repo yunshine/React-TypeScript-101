@@ -14,13 +14,15 @@ function displayItems() {
     list.insertAdjacentHTML(
       'beforeend',
       `<div class='listItem'>
-      <div class='listItemLeft'>
-      <input type='checkbox' id=${index} class='checkbox' ${
+        <li>
+          <div class='listItemLeft'>
+            <input type='checkbox' id=${index} class='checkbox' ${
         item.completed ? 'checked' : ''
       } />
-      <li>${index + 1}. ${item.task}</li>
-      </div>
-      <i class="far fa-minus-square"></i>
+            <label>${index + 1}. ${item.task}</label>
+          </div>
+          <i class="far fa-minus-square"></i>
+        </>
       </div>`
     );
   });
@@ -29,12 +31,11 @@ function displayItems() {
 displayItems();
 
 function toggleItemCompletion(e) {
-  console.log(e.target);
-  console.log(listItems);
   if (e.target.matches('input')) {
-    console.log(e.target.id);
     listItems[e.target.id].completed = !listItems[e.target.id].completed;
-    console.log(listItems);
+    console.log(listItems[e.target.id], e.target);
   }
 }
 list.addEventListener('click', toggleItemCompletion);
+
+// ${item.completed ? 'completed' : 'incomplete'}

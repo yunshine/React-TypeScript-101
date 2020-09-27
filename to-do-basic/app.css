@@ -21,7 +21,7 @@ h1 {
   width: 49%;
 }
 .listItem {
-  background-color: rgb(241, 241, 241);
+  /* background-color: rgb(241, 241, 241);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,21 +30,32 @@ h1 {
   padding: 0px;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
+  font-weight: 100; */
 }
 
 .listItemLeft {
-  display: flex;
+  /* display: flex;
   margin: 0;
-  padding: 0px;
+  padding: 0px; */
 }
 
 li {
-  margin-left: 8px;
+  /* margin-left: 8px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+
+  list-style-type: none;
+  margin: 8px;
+  padding: 0px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 ul {
-  /* margin: 0px; */
+  margin: 0px;
   padding-inline-start: 0px;
 }
 
@@ -53,4 +64,8 @@ input {
 }
 i {
   margin: 4px 4px;
+}
+
+.completed {
+  text-decoration: line-through;
 }
