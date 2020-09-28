@@ -2,5 +2,7 @@
 function markDone(e) {}
 
 $('.far').on('click', function (e) {
-  console.log('clicked');
+  console.log($(this).parent());
+  $(this).parent().toggleClass('done');
+  e.stopPropagation;
 });
