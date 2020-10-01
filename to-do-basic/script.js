@@ -19,8 +19,21 @@ $('.far').on('click', function (e) {
 // with the value, create a new li...
 
 
-$('form').on('submit', function (e) {
-  e.preventDefault();
-  console.log("form submitted...");
+$("input[type='text']").keypress(function (e) {
+  if (e.which === 13) {
+    e.preventDefault();
+    let newItem = $(this).val()
+    console.log("form submitted...",);
+    console.log("New Item: ", newItem);
+
+    // $("input[type='text']").reset();
+    $(this).val("");
+  };
+  // console.log($(this).val());
 });
 
+// $('form').on('submit', function (e) {
+//   e.preventDefault();
+//   console.log("form submitted...");
+//   console.log($(input[type = 'text']).val());
+// });
