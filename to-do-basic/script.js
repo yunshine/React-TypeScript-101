@@ -1,5 +1,4 @@
 // click on a checkbox to mark an item as complete...
-function markDone(e) {}
 
 $('.far').on('click', function (e) {
   console.log($(this).parent());
@@ -12,3 +11,16 @@ $('.far').on('click', function (e) {
   }
   e.stopPropagation;
 });
+
+
+// select form
+// when submitted...
+// retrieve value...
+// with the value, create a new li...
+
+
+$('form').on('submit', function (e) {
+  e.preventDefault();
+  console.log("form submitted...");
+});
+

@@ -1,65 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-    <meta
-      name="To Do List"
-      content="A quick to do list app to practice my HTML, CSS, Javascript, and jQuery skills."
-    />
-    <script
-      src="https://kit.fontawesome.com/b622451a1f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      type="text/javascript"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
 
-    <link rel="stylesheet" type="text/css" href="app.css" />
-  </head>
-  <body>
-    <h1>Hello. I am your app.</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List</title>
+  <meta name="To Do List" content="A quick to do list app to practice my HTML, CSS, Javascript, and jQuery skills." />
+  <script src="https://kit.fontawesome.com/b622451a1f.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-    <div class="appContainer">
-      <form action="" #>
-        <!-- <label for="toDoItem">New To Do Item: </label> -->
-        <input
-          type="text"
-          class="inputForm"
-          name="toDoItem"
-          placeholder="Add a new to do item"
-          required
-        />
-        <input type="submit" />
-      </form>
-      <ul>
-        <li>
-          <i class="fas fa-trash"></i><i class="far fa-square"></i>Study jQuery
-        </li>
-        <li>
-          <i class="fas fa-trash"></i><i class="far fa-square"></i>Write HTML
-        </li>
-        <li>
-          <i class="fas fa-trash"></i><i class="far fa-square"></i>Eat Lunch
-        </li>
-        <li>
-          <i class="fas fa-trash"></i><i class="far fa-square"></i>Write jQuery
-        </li>
-        <li>
-          <i class="fas fa-trash"></i><i class="far fa-square"></i>Style with
-          CSS
-        </li>
-        <li>
-          <i class="fas fa-trash"><i class="far fa-square"></i></i>Push to
-          GitHub
-        </li>
-      </ul>
-    </div>
+  <link rel="stylesheet" type="text/css" href="app.css" />
+</head>
 
-    <script type="text/javascript" src="script.js"></script>
-  </body>
+<body>
+  <h1>Hello. I am your app.</h1>
+
+  <div class="appContainer">
+    <form action="" #>
+      <!-- <label for="toDoItem">New To Do Item: </label> -->
+      <input type="text" id="textbox" class="inputForm" name="toDoItem" placeholder="Add a new to do item" required />
+      <input type="submit" />
+    </form>
+    <ul>
+      <li>
+        <i class="fas fa-trash"></i><i class="far fa-square"></i>Study jQuery
+      </li>
+      <li>
+        <i class="fas fa-trash"></i><i class="far fa-square"></i>Write HTML
+      </li>
+      <li>
+        <i class="fas fa-trash"></i><i class="far fa-square"></i>Eat Lunch
+      </li>
+      <li>
+        <i class="fas fa-trash"></i><i class="far fa-square"></i>Write jQuery
+      </li>
+      <li>
+        <i class="fas fa-trash"></i><i class="far fa-square"></i>Style with
+        CSS
+      </li>
+      <li>
+        <i class="fas fa-trash"><i class="far fa-square"></i></i>Push to
+        GitHub
+      </li>
+    </ul>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
