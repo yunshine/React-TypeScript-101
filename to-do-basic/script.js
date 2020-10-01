@@ -28,8 +28,9 @@ $("input[type='text']").keypress(function (e) {
 
     // $("input[type='text']").reset();
     $(this).val("");
+
+    $("ul").append(newItem);
   };
-  // console.log($(this).val());
 });
 
 // $('form').on('submit', function (e) {
