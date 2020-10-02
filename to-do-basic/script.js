@@ -12,6 +12,11 @@ $('.far').on('click', function (e) {
   e.stopPropagation;
 });
 
+$('.fas').on('click', function (e) {
+  console.log($(this).parent());
+  $(this).parent().remove();
+});
+
 
 // select form
 // when submitted...
