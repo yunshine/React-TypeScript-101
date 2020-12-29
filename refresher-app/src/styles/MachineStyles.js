@@ -1,6 +1,21 @@
 // import sizes from './MediaSizes';
 
 export default {
+    Machine: {
+        margin: 'auto',
+        width: '480px',
+        border: '1px solid red',
+    },
+    MachineSH2: {
+        fontSize: '32px',
+        fontWeight: '200',
+        textShadow: '0px -10px 10px teal',
+    },
+    MachineResultText: {
+        fontSize: '32px',
+        fontWeight: '200',
+        textShadow: '0px 10px 3px blue',
+    },
     // About: {
     //     margin: 'auto',
     //     marginTop: '0px',
