@@ -1,0 +1,19 @@
+// "any" allows any type to be used. This defeats the purpose of types, so you generally shouldn't used "any"...
+var firstVar = 1;
+firstVar = "Eunjoo";
+var nameOfWife = "Eunjoo";
+var numberOfEunjoos = 1;
+var eunjooIsDope = true;
+// an array of any type...
+var meaningfulTerms = ["Love", 718, true];
+// an array of ONLY strings...
+var placesVisited = ["Seoul", "Tokyo", "Okinawa", "Hakone", "Seattle", "Portland"];
+// a function must return a string...
+function sayHi(name) {
+    return "Hi, " + name + "!!!";
+}
+// a function can return any type...
+function sayHi(name) {
+    console.log("Value from function sayHi: ", name);
+}
+// re-visit enum at a later time for the sake of clarification...
