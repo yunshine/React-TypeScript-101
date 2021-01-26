@@ -10,6 +10,10 @@ var Cafe = /** @class */ (function () {
         this.area = area = "Tokyo";
         // this.specialty = specialty;
     }
+    // class methods...
+    Cafe.prototype.inviteGuest = function (person) {
+        console.log(person + ", would you like to go to " + this.name + " with me?");
+    };
     // static properties are only accessible on the class model (ie. Cafe)...
     Cafe.castle = "Winterfell";
     return Cafe;
@@ -20,3 +24,4 @@ var cafeKitsune = new Cafe("Cafe Kitsune", "Aoyama");
 cafeKitsune.specialty = 12;
 console.log('cafeKitsune: ', cafeKitsune);
 console.log('Cafe castle: ', Cafe.castle);
+cafeKitsune.inviteGuest("Eunjoo");

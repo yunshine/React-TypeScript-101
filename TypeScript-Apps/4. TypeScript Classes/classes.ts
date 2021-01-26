@@ -16,6 +16,11 @@ class Cafe {
         this.area = area = "Tokyo";
         // this.specialty = specialty;
     }
+
+    // class methods...
+    inviteGuest(person : string) {
+        console.log(`${person}, would you like to go to ${this.name} with me?`);
+    }
 }
 
 // let cafeKitsune = new Cafe();
@@ -26,3 +31,5 @@ cafeKitsune.specialty = 12;
 
 console.log('cafeKitsune: ', cafeKitsune);
 console.log('Cafe castle: ', Cafe.castle);
+
+cafeKitsune.inviteGuest("Eunjoo");
