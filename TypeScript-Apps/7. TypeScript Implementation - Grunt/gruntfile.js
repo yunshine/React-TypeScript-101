@@ -9,11 +9,16 @@ module.exports = function(grunt) {
     grunt.initConfig({
         ts: {
             main: {
-                // this src will be an array of TypeScript files that it's going to take and turn into JavaScript...
-                src: [],
+                // this src will be an array of TypeScript files that it's going to take and turn into JavaScript. Use * to specificy multiple files...
+                src: ['typescript/*.ts'],
                 // dest is the folder where we will send our TypeScript files after they've been turned into JavaScript files...
-                dest: 'javascript/'
+                // dest: 'javascript/'
+
+                // all TypeScript files in src will concatenate to one document...
+                out: 'javascript/main.js'
             }
         }
     });
+    // register a grunt task for TypeScript files to run...
+    grunt.registerTask('default', ['ts'])
 }
