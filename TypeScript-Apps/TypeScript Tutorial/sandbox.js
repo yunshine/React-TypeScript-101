@@ -1,37 +1,77 @@
 // typing tsc sandbox.ts -w will keep "watching" this file and compile to sandbox.js whenever a change has been detected...
-// Notes From Lesson 4--------------------------------------------------------
+// Notes From Lesson 6--------------------------------------------------------
+// TypeScript Dynamic (any) Types...
+var age = 25;
+age = true;
+console.log(age);
+age = 'hello';
+console.log(age);
+age = { name: 'luigi' };
+console.log(age);
+// TypeScript Dynamic (any) Arrays...
+var mixed = [];
+mixed.push(5);
+mixed.push('mario');
+mixed.push(false);
+console.log(mixed);
+// TypeScript Dynamic (any) Objects...
+var ninja;
+ninja = { name: 'yoshi', age: 25 };
+console.log(ninja);
+ninja = { name: 25, age: 'yoshi' };
+console.log(ninja);
+/*
+// Notes From Lesson 5--------------------------------------------------------
 // Explicit Types in TypeScript...
-var characterName = 'mario';
-var age;
-var isLoggedIn;
+let characterName: string = 'mario';
+let age: number;
+let isLoggedIn: boolean;
+
 // age = 'luigi';
 age = 43;
+
 // isLoggedIn = 25;
 isLoggedIn = true;
+
+
 // TypeScript Arrays
 // in the future, the array below can only be an array of strings. Also, be sure to initialize with an empty array. Otherwise, you can't push new values into it...
-var ninjas = [];
+let ninjas: string[] = [];
+
 // ninjas = [8, true, 319];
 ninjas.push('ryu');
 ninjas.push('chun-li');
 console.log(ninjas);
+
+
 // TypeScript Union Types => multiple types allowed...
-var mixed = [];
+let mixed: (string | number | boolean)[] = [];
+
 mixed.push('hello');
 mixed.push(false);
 mixed.push(20);
 console.log(mixed);
+
 // a TypeScript Union Type on a normal variable (not just arrays)...
-var userID;
+let userID: string | number;
 // userID = false;
 userID = 123;
 userID = '123';
+
+
 // TypeScript Objects
-var ninjaOne;
+let ninjaOne: object;
 ninjaOne = { name: 'yoshi', age: 30 };
-var ninjaTwo;
+
+let ninjaTwo: {
+    name: string,
+    age: number,
+    beltColour: string
+};
 ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
-/*
+
+
+
 // Notes From Lesson 4--------------------------------------------------------
 // TypeScipt Arrays
 // if we declare/initialize an array with only one type, it cannot have other types in it...

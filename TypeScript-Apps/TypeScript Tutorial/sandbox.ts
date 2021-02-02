@@ -1,6 +1,37 @@
 // typing tsc sandbox.ts -w will keep "watching" this file and compile to sandbox.js whenever a change has been detected...
 
-// Notes From Lesson 4--------------------------------------------------------
+// Notes From Lesson 6--------------------------------------------------------
+// TypeScript Dynamic (any) Types...
+let age: any = 25;
+
+age = true;
+console.log(age);
+age = 'hello';
+console.log(age);
+age = { name: 'luigi' };
+console.log(age);
+
+// TypeScript Dynamic (any) Arrays...
+let mixed: any[] = [];
+
+mixed.push(5);
+mixed.push('mario');
+mixed.push(false);
+console.log(mixed);
+
+// TypeScript Dynamic (any) Objects...
+let ninja: { name: any, age: any };
+
+ninja = { name: 'yoshi', age: 25 };
+console.log(ninja);
+
+ninja = { name: 25, age: 'yoshi' };
+console.log(ninja);
+
+
+
+/*
+// Notes From Lesson 5--------------------------------------------------------
 // Explicit Types in TypeScript...
 let characterName: string = 'mario';
 let age: number;
@@ -50,7 +81,7 @@ let ninjaTwo: {
 ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
 
 
-/*
+
 // Notes From Lesson 4--------------------------------------------------------
 // TypeScipt Arrays
 // if we declare/initialize an array with only one type, it cannot have other types in it...
