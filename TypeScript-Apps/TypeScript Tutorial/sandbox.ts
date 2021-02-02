@@ -1,5 +1,57 @@
 // typing tsc sandbox.ts -w will keep "watching" this file and compile to sandbox.js whenever a change has been detected...
 
+// Notes From Lesson 4--------------------------------------------------------
+// Explicit Types in TypeScript...
+let characterName: string = 'mario';
+let age: number;
+let isLoggedIn: boolean;
+
+// age = 'luigi';
+age = 43;
+
+// isLoggedIn = 25;
+isLoggedIn = true;
+
+
+// TypeScript Arrays
+// in the future, the array below can only be an array of strings. Also, be sure to initialize with an empty array. Otherwise, you can't push new values into it...
+let ninjas: string[] = [];
+
+// ninjas = [8, true, 319];
+ninjas.push('ryu');
+ninjas.push('chun-li');
+console.log(ninjas);
+
+
+// TypeScript Union Types => multiple types allowed...
+let mixed: (string | number | boolean)[] = [];
+
+mixed.push('hello');
+mixed.push(false);
+mixed.push(20);
+console.log(mixed);
+
+// a TypeScript Union Type on a normal variable (not just arrays)...
+let userID: string | number;
+// userID = false;
+userID = 123;
+userID = '123';
+
+
+// TypeScript Objects
+let ninjaOne: object;
+ninjaOne = { name: 'yoshi', age: 30 };
+
+let ninjaTwo: {
+    name: string,
+    age: number,
+    beltColour: string
+};
+ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
+
+
+/*
+// Notes From Lesson 4--------------------------------------------------------
 // TypeScipt Arrays
 // if we declare/initialize an array with only one type, it cannot have other types in it...
 const names = ['luigi', 'mario', 'yoshi'];
@@ -44,8 +96,9 @@ ninja = {
 };
 
 
-/*
-Notes From Lesson --------------------------------------------------------
+
+// Notes From Lesson 3--------------------------------------------------------
+// TypeScript Types...
 let character = 'mario';
 let age = 30;
 let isBlackBelt = false;
@@ -65,11 +118,10 @@ const circumference = (diameter: number) => {
 
 // console.log(circumference('hello'));
 console.log(circumference(7.5));
-*/
 
 
-/*
-Notes From Lesson 2--------------------------------------------------------
+
+// Notes From Lesson 2--------------------------------------------------------
 const character = 'Luigi';
 
 console.log("Character Name: ", character);
