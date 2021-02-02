@@ -1,32 +1,10 @@
 // typing tsc sandbox.ts -w will keep "watching" this file and compile to sandbox.js whenever a change has been detected...
 
+// typing tsc --init will create a TypeScript config file where we can set the root directory of our TS files as well as where the compiled JS files will be sent to...
+// from the root directory in the terminal, hit tsc -w to compile all the files in src dir and send the JS files to the public folder...
+
 // Notes From Lesson 6--------------------------------------------------------
-// TypeScript Dynamic (any) Types...
-let age: any = 25;
-
-age = true;
-console.log(age);
-age = 'hello';
-console.log(age);
-age = { name: 'luigi' };
-console.log(age);
-
-// TypeScript Dynamic (any) Arrays...
-let mixed: any[] = [];
-
-mixed.push(5);
-mixed.push('mario');
-mixed.push(false);
-console.log(mixed);
-
-// TypeScript Dynamic (any) Objects...
-let ninja: { name: any, age: any };
-
-ninja = { name: 'yoshi', age: 25 };
-console.log(ninja);
-
-ninja = { name: 25, age: 'yoshi' };
-console.log(ninja);
+console.log("testing123 from sandbox.ts...")
 
 
 
