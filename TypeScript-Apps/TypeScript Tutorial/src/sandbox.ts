@@ -5,11 +5,45 @@
 
 
 // Notes From Lesson 7--------------------------------------------------------
+// TypeScript Function Basics...
+// 'greet' has now been set to be a function... don't forget to use capital F in 'Function"...
+let greet: Function = () => {
+    console.log('hello from sandbox.ts...');
+}
 
+// greet = 'hello';
+greet = () => {
+    console.log('hello, again from sandbox.ts...');
+}
+
+// how to set a type for parameters...
+// the question mark after 'c' means it is an optional parameter that can be a number or a string with a default value of 10...
+// 'void' means we are not returning anything from this function...
+// const add = (a: number, b: number, c?: number | string = 10): void => {
+const add = (a: number, b: number, c?: number | string = 10) => {
+    console.log("Answer from the function 'add': ", a + b + c);
+    console.log("C is: ", c);
+}
+
+add(5, 10);
+add(5, 10, 50);
+add(5, 10, '50');
+add(5, 10, 'ninja');
+
+// you can explicitly set the return type to be a numbet with ':number' after the parentheses and before the arrow...
+const minus = (a: number, b: number): number => {
+    return a + b;
+}
+
+// TypeScript now sets 'result' to be of type 'number'...
+let result = minus(10, 7);
+// result = "math!";
+console.log("Answer from the function 'minus': ", result);
 
 
 /*
 // Notes From Lesson 6--------------------------------------------------------
+// TypeScript File Organization and tsconfig.json...
 console.log("testing123 from sandbox.ts...")
 
 
@@ -57,9 +91,9 @@ let ninjaOne: object;
 ninjaOne = { name: 'yoshi', age: 30 };
 
 let ninjaTwo: {
-    name: string,
-    age: number,
-    beltColour: string
+name: string,
+age: number,
+beltColour: string
 };
 ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
 
@@ -91,9 +125,9 @@ mixed[0] = 3;
 // TypeScript Objects
 // in this TypeScript example, 'ninja' must always be an object, 'name' and 'belt' must always be strings, and 'age' must always be a number...
 let ninja = {
-    name: 'mario',
-    belt: 'black',
-    age: 30
+name: 'mario',
+belt: 'black',
+age: 30
 };
 
 // ninja.age = '30';
@@ -103,10 +137,10 @@ ninja.name = 'ryu';
 // ninja.skills = ['fighting', 'sneaking']
 
 ninja = {
-    name: 'yoshi',
-    belt: 'orange',
-    age: 40,
-    // skills: ['running'],
+name: 'yoshi',
+belt: 'orange',
+age: 40,
+// skills: ['running'],
 };
 
 
@@ -127,7 +161,7 @@ age = 40;
 isBlackBelt = true;
 
 const circumference = (diameter: number) => {
-    return diameter * Math.PI;
+return diameter * Math.PI;
 };
 
 // console.log(circumference('hello'));
@@ -143,6 +177,6 @@ console.log("Character Name: ", character);
 const inputs = document.querySelectorAll('input');
 
 inputs.forEach(input => {
-    console.log("All Inputs: ", input);
+console.log("All Inputs: ", input);
 });
 */
