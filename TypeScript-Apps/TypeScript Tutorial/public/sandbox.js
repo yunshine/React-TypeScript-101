@@ -1,22 +1,17 @@
 "use strict";
 // typing tsc sandbox.ts -w will keep "watching" this file and compile to sandbox.js whenever a change has been detected...
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
-// greet = 'hello';
-// greet = () => {
-//   console.log('hello, again');
-// }
-// const add = (a: number, b: number, c/*?*/: number | string = 10): void => {
-//     console.log(a + b);
-//     console.log(c);
-// }
-// add(5, 10, 'ninja');
-// const minus = (a: number, b: number): number => {
-//     return a + b;
-// }
-// let result = minus(10, 7);
-// console.log(result);
+var itemDetails = function (itemID, itemName) {
+    console.log("Using the StringOrNum Alias: " + itemName + " has an ID of " + itemID);
+};
+var greet = function (user) {
+    console.log("Using the ojbWithName Alias: " + user.name + ", with the ID " + user.userID + ", says 'hello!'...");
+};
+var greetAgain = function (user) {
+    console.log("Using the ojbWithName Alias: " + user.name + ", with the ID " + user.userID + ", says 'Nice to see you again!'");
+};
+itemDetails(309, "Wedding Band");
+greet({ name: "Yun", userID: 718 });
+greetAgain({ name: "Eunjoo", userID: 122 });
 /*
 // Notes From Lesson 8--------------------------------------------------------
 // TypeScript Function Basics...

@@ -8,30 +8,25 @@
 
 // syntax for reusing explicit types...
 type StringOrNum = string | number;
+type objWithName = { name: string, userID: StringOrNum };
 
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
+const itemDetails = (itemID: StringOrNum, itemName: string) => {
+    console.log(`Using the StringOrNum Alias: ${itemName} has an ID of ${itemID}`);
+}
 
-// greet = 'hello';
+const greet = (user: objWithName) => {
+    console.log(`Using the ojbWithName Alias: ${user.name}, with the ID ${user.userID}, says 'hello!'...`)
+}
 
-// greet = () => {
-//   console.log('hello, again');
-// }
+const greetAgain = (user: objWithName) => {
+    console.log(`Using the ojbWithName Alias: ${user.name}, with the ID ${user.userID}, says 'Nice to see you again!'`)
+}
 
-// const add = (a: number, b: number, c/*?*/: number | string = 10): void => {
-//     console.log(a + b);
-//     console.log(c);
-// }
+itemDetails(309, "Wedding Band");
+greet({ name: "Yun", userID: 718 });
+greetAgain({ name: "Eunjoo", userID: 122 });
 
-// add(5, 10, 'ninja');
 
-// const minus = (a: number, b: number): number => {
-//     return a + b;
-// }
-
-// let result = minus(10, 7);
-// console.log(result);
 
 /*
 // Notes From Lesson 8--------------------------------------------------------
