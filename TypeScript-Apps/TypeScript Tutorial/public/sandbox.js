@@ -1,42 +1,75 @@
 "use strict";
 // typing tsc sandbox.ts -w will keep "watching" this file and compile to sandbox.js whenever a change has been detected...
-// typing tsc --init will create a TypeScript config file where we can set the root directory of our TS files as well as where the compiled JS files will be sent to...
-// from the root directory in the terminal, hit tsc -w to compile all the files in src dir and send the JS files to the public folder...
-// Notes From Lesson 7--------------------------------------------------------
+// let greet: Function = () => {
+//   console.log('hello, world');
+// }
+// greet = 'hello';
+// greet = () => {
+//   console.log('hello, again');
+// }
+// const add = (a: number, b: number, c/*?*/: number | string = 10): void => {
+//     console.log(a + b);
+//     console.log(c);
+// }
+// add(5, 10, 'ninja');
+// const minus = (a: number, b: number): number => {
+//     return a + b;
+// }
+// let result = minus(10, 7);
+// console.log(result);
+/*
+// Notes From Lesson 8--------------------------------------------------------
 // TypeScript Function Basics...
 // 'greet' has now been set to be a function... don't forget to use capital F in 'Function"...
-var greet = function () {
+let greet: Function = () => {
     console.log('hello from sandbox.ts...');
-};
+}
+
 // greet = 'hello';
-greet = function () {
+greet = () => {
     console.log('hello, again from sandbox.ts...');
-};
+}
+
 // how to set a type for parameters...
 // the question mark after 'c' means it is an optional parameter that can be a number or a string with a default value of 10...
 // 'void' means we are not returning anything from this function...
 // const add = (a: number, b: number, c?: number | string = 10): void => {
-var add = function (a, b, c) {
-    if (c === void 0) { c = 10; }
+const add = (a: number, b: number, c?: number | string = 10) => {
     console.log("Answer from the function 'add': ", a + b + c);
     console.log("C is: ", c);
-};
+}
+
 add(5, 10);
 add(5, 10, 50);
 add(5, 10, '50');
 add(5, 10, 'ninja');
+
 // you can explicitly set the return type to be a numbet with ':number' after the parentheses and before the arrow...
-var minus = function (a, b) {
+const minus = (a: number, b: number): number => {
     return a + b;
-};
+}
+
 // TypeScript now sets 'result' to be of type 'number'...
-var result = minus(10, 7);
+let result = minus(10, 7);
 // result = "math!";
 console.log("Answer from the function 'minus': ", result);
-/*
-// Notes From Lesson 6--------------------------------------------------------
+
+
+
+// Notes From Lesson 7--------------------------------------------------------
 // TypeScript File Organization and tsconfig.json...
 console.log("testing123 from sandbox.ts...")
+
+
+
+// Notes From Lesson 6--------------------------------------------------------
+// Dynamic Types => any...
+let age: any = 25;
+
+age = true;
+age = "43";
+
+// But using 'any' basically negate the benefits of using TypeScript, so think twice before using 'any'...
 
 
 
@@ -92,7 +125,7 @@ ninjaTwo = { name: 'ken', age: 20, beltColour: 'black' };
 
 
 // Notes From Lesson 4--------------------------------------------------------
-// TypeScipt Arrays
+// TypeScipt Arrays & Objects Part 1...
 // if we declare/initialize an array with only one type, it cannot have other types in it...
 const names = ['luigi', 'mario', 'yoshi'];
 
@@ -114,7 +147,8 @@ mixed.push('ryu');
 mixed.push(10);
 mixed[0] = 3;
 
-// TypeScript Objects
+
+// TypeScipt Arrays & Objects Part 2...
 // in this TypeScript example, 'ninja' must always be an object, 'name' and 'belt' must always be strings, and 'age' must always be a number...
 let ninja = {
 name: 'mario',
