@@ -3,6 +3,50 @@
 // typing tsc --init will create a TypeScript config file where we can set the root directory of our TS files as well as where the compiled JS files will be sent to...
 // from the root directory in the terminal, hit tsc -w to compile all the files in src dir and send the JS files to the public folder...
 
+// Notes From Lesson 10--------------------------------------------------------
+// TypeScript Function Signatures...
+
+// Example 1 of giving a function a TypeScript signature...
+let basicGreet: Function;
+basicGreet = (name: string, greeting: string) => {
+    console.log(`${name} says "${greeting}`)
+}
+basicGreet("Yun", "Hi");
+
+// Example 2 of giving a function a TypeScript signature...
+let greet: (a: string, b: string) => void;
+greet = (name: string, greeting: string) => {
+    console.log(`${name} says "${greeting}"`)
+}
+
+greet("Yun", "Hola");
+
+// Example 3 of giving a function a TypeScript signature...
+let calculate: (a: number, b: number, c: string) => number;
+calculate = (numOne: number, numTwo: number, action: string) => {
+    if (action === "add") {
+        return numOne + numTwo;
+    } else {
+        return numOne * numTwo;
+    }
+}
+
+console.log(calculate(5, 5, "add"));
+console.log(calculate(5, 5, "calculate"));
+
+// Example 4 of giving a function a TypeScript signature...
+let logDetails: (ob: { name: string, age: number }) => void;
+type person = { name: string, age: number };
+
+logDetails = (ninja: person) => {
+    console.log(`${ninja.name} is ${ninja.age} years old.`)
+}
+
+logDetails({ name: "Yun", age: 43 });
+
+
+
+/*
 // Notes From Lesson 9--------------------------------------------------------
 // TypeScript Aliases...
 
@@ -28,7 +72,6 @@ greetAgain({ name: "Eunjoo", userID: 122 });
 
 
 
-/*
 // Notes From Lesson 8--------------------------------------------------------
 // TypeScript Function Basics...
 // 'greet' has now been set to be a function... don't forget to use capital F in 'Function"...
