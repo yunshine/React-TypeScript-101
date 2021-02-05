@@ -1,6 +1,11 @@
 "use strict";
-// Lesson 12: TypeScript Classes------------------------------------------
+// Lessons 12 & 13: TypeScript Classes + Public, Private, Read-Only------------
 var Invoice = /** @class */ (function () {
+    // readonly client: string;
+    // private details: string;
+    // public amount: number;
+    // constructor(client: string, details: string, amount: number) {
+    // a better way to build a constructor...
     function Invoice(client, details, amount) {
         this.client = client;
         this.details = details;
@@ -21,6 +26,11 @@ var invoices = [];
 invoices.push(invoiceTestOne);
 invoices.push(invoiceTestTwo);
 console.log("Invoice objects only: ", invoices);
+// You'll get errors for the console.log below because details is private...
+// console.log("Details Example: ", invoiceTestOne.details);
+invoices.forEach(function (invoice) {
+    console.log("invoices array forEach: ", invoice.client, invoice.amount, invoice.format());
+});
 // Lesson 11: TypeScript TypeCasting------------------------------------------
 var anchorTag = document.querySelector('a');
 // the console.log below will work, but there is a TS warning that the href could possibly be null. So, you can add a ! at the end of line 1 to tell TS that I KNOW that this querySelector will return a value...

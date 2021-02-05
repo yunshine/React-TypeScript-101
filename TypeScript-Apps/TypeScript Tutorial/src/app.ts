@@ -1,14 +1,17 @@
-// Lesson 12: TypeScript Classes------------------------------------------
+// Lessons 12 & 13: TypeScript Classes + Public, Private, Read-Only------------
 class Invoice {
-    client: string;
-    details: string;
-    amount: number;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number;
 
-    constructor(client: string, details: string, amount: number) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
+    // constructor(client: string, details: string, amount: number) {
+    // a better way to build a constructor...
+    constructor(
+        readonly client: string,
+        private details: string,
+        public amount: number
+    ) { }
+
     format() {
         return `${this.client} owes $${this.amount} for ${this.details}.`;
     }
@@ -25,6 +28,13 @@ let invoices: Invoice[] = [];
 invoices.push(invoiceTestOne);
 invoices.push(invoiceTestTwo);
 console.log("Invoice objects only: ", invoices);
+
+// You'll get errors for the console.log below because details is private...
+// console.log("Details Example: ", invoiceTestOne.details);
+
+invoices.forEach(invoice => {
+    console.log("invoices array forEach: ", invoice.client, invoice.amount, invoice.format());
+})
 
 
 
