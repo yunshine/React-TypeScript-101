@@ -5,20 +5,20 @@
 // Notes From Lesson 10--------------------------------------------------------
 // TypeScript Function Signatures...
 // Example 1 of giving a function a TypeScript signature...
-var basicGreet;
-basicGreet = function (name, greeting) {
-    console.log(name + " says \"" + greeting);
+let basicGreet;
+basicGreet = (name, greeting) => {
+    console.log(`${name} says "${greeting}`);
 };
 basicGreet("Yun", "Hi");
 // Example 2 of giving a function a TypeScript signature...
-var greet;
-greet = function (name, greeting) {
-    console.log(name + " says \"" + greeting + "\"");
+let greet;
+greet = (name, greeting) => {
+    console.log(`${name} says "${greeting}"`);
 };
 greet("Yun", "Hola");
 // Example 3 of giving a function a TypeScript signature...
-var calculate;
-calculate = function (numOne, numTwo, action) {
+let calculate;
+calculate = (numOne, numTwo, action) => {
     if (action === "add") {
         return numOne + numTwo;
     }
@@ -29,9 +29,9 @@ calculate = function (numOne, numTwo, action) {
 console.log(calculate(5, 5, "add"));
 console.log(calculate(5, 5, "calculate"));
 // Example 4 of giving a function a TypeScript signature...
-var logDetails;
-logDetails = function (ninja) {
-    console.log(ninja.name + " is " + ninja.age + " years old.");
+let logDetails;
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old.`);
 };
 logDetails({ name: "Yun", age: 43 });
 /*

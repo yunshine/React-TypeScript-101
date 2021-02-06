@@ -1,21 +1,25 @@
+import { Invoice } from './classes/Invoice.js';
+
 // Lessons 12 & 13: TypeScript Classes + Public, Private, Read-Only------------
-class Invoice {
-    // readonly client: string;
-    // private details: string;
-    // public amount: number;
+// this Invoice class has been moved to demonstrate modules (Lesson 14)...
 
-    // constructor(client: string, details: string, amount: number) {
-    // a better way to build a constructor...
-    constructor(
-        readonly client: string,
-        private details: string,
-        public amount: number
-    ) { }
+// class Invoice {
+//     // readonly client: string;
+//     // private details: string;
+//     // public amount: number;
 
-    format() {
-        return `${this.client} owes $${this.amount} for ${this.details}.`;
-    }
-}
+//     // constructor(client: string, details: string, amount: number) {
+//     // a better way to build a constructor...
+//     constructor(
+//         readonly client: string,
+//         private details: string,
+//         public amount: number
+//     ) { }
+
+//     format() {
+//         return `${this.client} owes $${this.amount} for ${this.details}.`;
+//     }
+// }
 
 const invoiceTestOne = new Invoice("Yun", "sneakers", 200);
 const invoiceTestTwo = new Invoice("Eunjoo", "snacks", 15);
