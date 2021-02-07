@@ -1,5 +1,33 @@
 import { Invoice } from './classes/Invoice.js';
 
+// Lesson 15: TypeScript Interfaces--------------------------------------------
+// an interface is essentially a definition or blueprint for an object that tells TypeScript what that object is going to be like...
+// how to define an interface...
+interface IsPerson {
+    // in the interface, we've set 'name' and 'age' as required as a string and as a number, but 'isCool' is NOT required because of the question mark...
+    name: string;
+    age: number;
+    speak(argOne: string): void;
+    spend(argOne: number): number;
+    isCool?: boolean;
+}
+
+// if 'me' is a type of 'IsPerson', 'me' must follow the pattern of 'IsPerson'...
+const me: IsPerson = {
+    name: 'Yun',
+    age: 43,
+    speak(text: string): void {
+        console.log(text);
+    },
+    spend(amount: number): number {
+        console.log(`I spent $${amount}.`);
+        return amount;
+    },
+    isCool: true
+};
+
+
+
 // Lessons 12 & 13: TypeScript Classes + Public, Private, Read-Only------------
 // this Invoice class has been moved to demonstrate modules (Lesson 14)...
 

@@ -1,4 +1,17 @@
 import { Invoice } from './classes/Invoice.js';
+// if 'me' is a type of 'IsPerson', 'me' must follow the pattern of 'IsPerson'...
+const me = {
+    name: 'Yun',
+    age: 43,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log(`I spent $${amount}.`);
+        return amount;
+    },
+    isCool: true
+};
 // Lessons 12 & 13: TypeScript Classes + Public, Private, Read-Only------------
 // this Invoice class has been moved to demonstrate modules (Lesson 14)...
 // class Invoice {
