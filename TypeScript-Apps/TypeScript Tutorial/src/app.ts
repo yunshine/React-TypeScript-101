@@ -102,6 +102,7 @@ const toFromField = document.querySelector('#tofrom') as HTMLInputElement;
 const detailsField = document.querySelector('#details') as HTMLInputElement;
 const amountField = document.querySelector('#amount') as HTMLInputElement;
 
+
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
     // console.log(typeField.value, toFromField.value, detailsField.value, amountField.value, amountField.valueAsNumber);
