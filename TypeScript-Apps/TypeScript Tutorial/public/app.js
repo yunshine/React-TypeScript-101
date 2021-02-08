@@ -1,4 +1,15 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+// Lesson 16: TypeScript Interfaces with Classes-------------------------------
+let docOne;
+let docTwo;
+docOne = new Invoice("Eugene", "Books", 25);
+docTwo = new Payment("Ami", "Coffee", 12);
+// the docsArray can only hold objects that implement the HasFormat interface
+let docsArray = [];
+docsArray.push(docOne);
+docsArray.push(docTwo);
+console.log("docsArray: ", docsArray);
 // if 'me' is a type of 'IsPerson', 'me' must follow the pattern of 'IsPerson'...
 const me = {
     name: 'Yun',

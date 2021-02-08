@@ -1,4 +1,19 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormat } from './interfaces/HasFormat.js';
+
+// Lesson 16: TypeScript Interfaces with Classes-------------------------------
+let docOne: HasFormat;
+let docTwo: HasFormat;
+
+docOne = new Invoice("Eugene", "Books", 25);
+docTwo = new Payment("Ami", "Coffee", 12);
+
+// the docsArray can only hold objects that implement the HasFormat interface
+let docsArray: HasFormat[] = [];
+docsArray.push(docOne);
+docsArray.push(docTwo);
+console.log("docsArray: ", docsArray);
 
 // Lesson 15: TypeScript Interfaces--------------------------------------------
 // an interface is essentially a definition or blueprint for the structure of an object that tells TypeScript what that object is going to be like...
