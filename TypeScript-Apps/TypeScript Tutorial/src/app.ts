@@ -104,5 +104,15 @@ const amountField = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
-    console.log(typeField.value, toFromField.value, detailsField.value, amountField.value, amountField.valueAsNumber);
+    // console.log(typeField.value, toFromField.value, detailsField.value, amountField.value, amountField.valueAsNumber);
+
+    let doc: HasFormat;
+
+    if (typeField.value === 'invoice') {
+        doc = new Invoice(toFromField.value, detailsField.value, amountField.valueAsNumber);
+    } else {
+        doc = new Payment(toFromField.value, detailsField.value, amountField.valueAsNumber);
+    }
+
+    console.log("From the form:", doc);
 });
