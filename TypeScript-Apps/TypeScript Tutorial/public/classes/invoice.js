@@ -1,4 +1,5 @@
 // Lessons 14: TypeScript Modules----------------------------------------------
+// to implement the HasFormat interfaces, use the keyword 'implements'...
 export class Invoice {
     // readonly client: string;
     // private details: string;
@@ -10,6 +11,7 @@ export class Invoice {
         this.details = details;
         this.amount = amount;
     }
+    // the method below follows the interface pattern from HasFormat...
     format() {
         return `${this.client} owes $${this.amount} for ${this.details}.`;
     }
