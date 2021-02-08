@@ -1,5 +1,5 @@
 // Lesson 17: Rendering HTML in TypeScript-------------------------------------
-import { HasFormat } from '../.interfaces/HasFormat.js';
+import { HasFormat } from '../interfaces/HasFormat.js';
 
 export class ListTemplate {
     constructor(private container: HTMLUListElement) {

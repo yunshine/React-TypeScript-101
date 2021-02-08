@@ -1,5 +1,6 @@
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
+import { ListTemplate } from './classes/ListTemplate.js';
 // Lesson 16: TypeScript Interfaces with Classes-------------------------------
 let docOne;
 let docTwo;
@@ -68,6 +69,9 @@ const typeField = document.querySelector('#type');
 const toFromField = document.querySelector('#tofrom');
 const detailsField = document.querySelector('#details');
 const amountField = document.querySelector('#amount');
+// list template instance...
+const ul = document.querySelector('ul');
+const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // console.log(typeField.value, toFromField.value, detailsField.value, amountField.value, amountField.valueAsNumber);
@@ -78,5 +82,6 @@ form.addEventListener('submit', (e) => {
     else {
         doc = new Payment(toFromField.value, detailsField.value, amountField.valueAsNumber);
     }
+    list.render(doc, typeField.value, 'end');
     console.log("From the form:", doc);
 });
