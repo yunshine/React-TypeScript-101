@@ -3,6 +3,26 @@ import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
 import { HasFormat } from './interfaces/HasFormat.js';
 
+// Lesson 18: TypeScript Generics----------------------------------------------
+// Generics allow us to create re-usable blocks of code which can be used with different types...
+
+// what <T> does is capture whatever item we pass in to the function and it capture what properties are going to be on it so that when it returns, it's going to know what properties are on that object, and we can run something like console.log("Generic Name: ", genericTestObj.name) without TS errors...
+// <T extends object> means that the type must be an object, and <T extends {name: string}> means that the type must be an object with a string name...
+const addUID = <T extends { name: string }>(obj: T) => {
+    // const addUID = <T extends object>(obj: T) => {
+    // const addUID = (obj: object) => {
+    let uid = Math.floor(Math.random() * 100);
+    return { ...obj, uid };
+}
+
+let genericTestObj = addUID({ name: "Yun", age: 43 });
+console.log("Generic: ", genericTestObj);
+
+// the console.log below will produce a TS error because what is being returned from the addUID function doesn't know yet that the genericTestObj object contains 'name' or not... so, we need to use <T>...
+console.log("Generic Name: ", genericTestObj.name);
+
+
+
 // Lesson 16: TypeScript Interfaces with Classes-------------------------------
 let docOne: HasFormat;
 let docTwo: HasFormat;
