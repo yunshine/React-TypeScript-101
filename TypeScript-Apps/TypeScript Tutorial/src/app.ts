@@ -21,6 +21,28 @@ console.log("Generic: ", genericTestObj);
 // the console.log below will produce a TS error because what is being returned from the addUID function doesn't know yet that the genericTestObj object contains 'name' or not... so, we need to use <T>...
 console.log("Generic Name: ", genericTestObj.name);
 
+// Generics with Interfaces...
+interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T;  /* We can now specify what kind of data this can be... see the example below... */
+}
+
+const genericWithInterfaceExample1: Resource<string[]> = {
+    uid: 309,
+    resourceName: "Months in Seoul",
+    data: ["October", "November", "December", "January", "February"]
+}
+
+const genericWithInterfaceExample2: Resource<object> = {
+    uid: 718,
+    resourceName: "this is the resourceName...",
+    data: {
+        name: "Eunjoo",
+        home: "Tokyo",
+        hobbies: ["cafes", "blogging", "reading", "Netflix"]
+    }
+}
 
 
 // Lesson 16: TypeScript Interfaces with Classes-------------------------------
