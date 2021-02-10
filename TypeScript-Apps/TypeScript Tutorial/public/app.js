@@ -128,12 +128,15 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // console.log(typeField.value, toFromField.value, detailsField.value, amountField.value, amountField.valueAsNumber);
+    // 'values' below is an example of a tuple array from lesson 20...
+    let values;
+    values = [toFromField.value, detailsField.value, amountField.valueAsNumber];
     let doc;
     if (typeField.value === 'invoice') {
-        doc = new Invoice(toFromField.value, detailsField.value, amountField.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(toFromField.value, detailsField.value, amountField.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, typeField.value, 'end');
     console.log("From the form:", doc);

@@ -186,12 +186,16 @@ form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
     // console.log(typeField.value, toFromField.value, detailsField.value, amountField.value, amountField.valueAsNumber);
 
+    // 'values' below is an example of a tuple array from lesson 20...
+    let values: [string, string, number];
+    values = [toFromField.value, detailsField.value, amountField.valueAsNumber];
+
     let doc: HasFormat;
 
     if (typeField.value === 'invoice') {
-        doc = new Invoice(toFromField.value, detailsField.value, amountField.valueAsNumber);
+        doc = new Invoice(...values);
     } else {
-        doc = new Payment(toFromField.value, detailsField.value, amountField.valueAsNumber);
+        doc = new Payment(...values);
     }
 
     list.render(doc, typeField.value, 'end');
