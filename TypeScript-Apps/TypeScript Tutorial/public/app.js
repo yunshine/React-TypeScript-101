@@ -1,6 +1,27 @@
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
+// Lesson 18: TypeScript Enums----------------------------------------------
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+;
+const enumExample1 = {
+    uid: 122,
+    resourceType: ResourceType.BOOK,
+    data: { title: "A Game of Thrones" }
+};
+const enumExample2 = {
+    uid: 718,
+    resourceType: ResourceType.PERSON,
+    data: "Eunjoo"
+};
+console.log("Enum Examples: ", enumExample1, enumExample2);
 // Lesson 18: TypeScript Generics----------------------------------------------
 // Generics allow us to create re-usable blocks of code which can be used with different types...
 // what <T> does is capture whatever item we pass in to the function and it capture what properties are going to be on it so that when it returns, it's going to know what properties are on that object, and we can run something like console.log("Generic Name: ", genericTestObj.name) without TS errors...

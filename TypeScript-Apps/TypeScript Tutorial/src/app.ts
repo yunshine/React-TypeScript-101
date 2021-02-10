@@ -3,6 +3,30 @@ import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
 import { HasFormat } from './interfaces/HasFormat.js';
 
+// Lesson 18: TypeScript Enums----------------------------------------------
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON };
+
+// A Generic In an Interface...
+interface AnotherResource<T> {
+    uid: number;
+    resourceType: ResourceType; /* now, this resourceType must match the ResourceType enum */
+    data: T;
+}
+
+const enumExample1: AnotherResource<object> = {
+    uid: 122,
+    resourceType: ResourceType.BOOK,
+    data: { title: "A Game of Thrones" }
+}
+const enumExample2: AnotherResource<string> = {
+    uid: 718,
+    resourceType: ResourceType.PERSON,
+    data: "Eunjoo"
+}
+console.log("Enum Examples: ", enumExample1, enumExample2)
+
+
+
 // Lesson 18: TypeScript Generics----------------------------------------------
 // Generics allow us to create re-usable blocks of code which can be used with different types...
 
@@ -43,6 +67,7 @@ const genericWithInterfaceExample2: Resource<object> = {
         hobbies: ["cafes", "blogging", "reading", "Netflix"]
     }
 }
+
 
 
 // Lesson 16: TypeScript Interfaces with Classes-------------------------------
