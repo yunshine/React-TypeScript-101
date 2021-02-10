@@ -1,7 +1,11 @@
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
-// Lesson 18: TypeScript Enums----------------------------------------------
+// Lesson 20: TypeScript Tuples----------------------------------------------
+// tuples are an array of known length, whose values are of a known type...
+// in the example below, the first item must be a string, the second must be a number, and the third must be a boolean...
+let tupleExample = ["Eunjoo", 36, true];
+// Lesson 19: TypeScript Enums----------------------------------------------
 var ResourceType;
 (function (ResourceType) {
     ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
