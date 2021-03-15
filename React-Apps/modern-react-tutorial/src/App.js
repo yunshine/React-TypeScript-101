@@ -1,4 +1,6 @@
 import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
     const title = 'This is the title in the App component...';
@@ -10,9 +12,11 @@ function App() {
 
     return (
         <div className="App">
+            <Navbar />
             <div className="content">
-                <h1>{title}</h1>
+                <h2>{title}</h2>
                 <h2>Today's date: {today}</h2>
+                <Home />
             </div>
         </div>
     );
