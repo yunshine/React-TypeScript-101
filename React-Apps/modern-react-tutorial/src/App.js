@@ -1,6 +1,7 @@
 // import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
+import Sandbox from './Sandbox';
 
 function App() {
     const title = 'This is the title in the App component...';
@@ -16,8 +17,11 @@ function App() {
             <div className="content">
                 <h2>{title}</h2>
                 <h2>Today's date: {today}</h2>
+                <br />
                 <Home />
             </div>
+            <br />
+            <Sandbox />
         </div>
     );
 }

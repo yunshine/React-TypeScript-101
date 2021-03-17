@@ -1,40 +1,21 @@
 import { useState } from 'react';
 
-// shortcut for creating a new  stateless function component template: sfc...
-function Home() {
-    // 'Yun' is the initial value for 'name'...
-    // 'setName' is the function that will reassign the initial 'name' variable to a new value AND allow React to react to the change by re-rendering with the updated value...
-    // in a useState hook, the first parameter is the initial value...
-    const [name, setName] = useState('Yun');
-    const [rank, setRank] = useState(24);
-
-    const handleClick = (evt) => {
-        console.log("testing handle click...", evt);
-    }
-
-    // how to pass an argument from an onClick...
-    const handleClick2 = (string, evt) => {
-        console.log("testing handle click... " + string, evt);
-        console.log("evt target: ", evt.target);
-    }
-
-    const handleClick3 = () => {
-        setName('Eunjoo');
-    }
-
-    const handleClick4 = () => {
-        setRank(1);
-    }
+const Home = () => {
+    const [blogs, setBlogs] = useState([
+        { title: "Favorite Cafe", body: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum", author: "Eunjoo", id: 1 },
+        { title: "Comfortable Sneakers", body: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", author: "Yun", id: 2 },
+        { title: "Date Night", body: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum...", author: "Eunjoo", id: 3 }
+    ]);
 
     return (
         <div className="home">
-            <h2>Homepage Component...</h2>
-            <h3>Name: {name} - my number {rank} favorite person.</h3>
-            <button onClick={handleClick}>Click One</button>
-            {/* how to pass an argument from an onClick... */}
-            <button onClick={(evt) => handleClick2("passing an argument...", evt)}>Click Two</button>
-            <button onClick={handleClick3}>Change Name</button>
-            <button onClick={handleClick4}>Change Rank</button>
+            {/* how to map over data; the syntax is a bit different since it uses () instead of {} and there is no return; also, don't forget to add a key... */}
+            {blogs.map(blog => (
+                <div className="blog-preview" key={blog.id}>
+                    <h2>{blog.title}</h2>
+                    <p>Written By: {blog.author}</p>
+                </div>
+            ))}
         </div>
     );
 }
