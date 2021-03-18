@@ -1,6 +1,7 @@
 const BlogList = (props) => {
     return (
         <div className="blog-list">
+            <h1>{props.title}</h1>
             {/* how to map over data; the syntax is a bit different since it uses () instead of {} and there is no return; also, don't forget to add a key... */}
 
             {props.blogs.map(blog => (
