@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BlogList from './BlogList';
 
 const Home = () => {
     const [blogs, setBlogs] = useState([
@@ -9,13 +10,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            {/* how to map over data; the syntax is a bit different since it uses () instead of {} and there is no return; also, don't forget to add a key... */}
-            {blogs.map(blog => (
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>Written By: {blog.author}</p>
-                </div>
-            ))}
+            <BlogList blogs={blogs} />
         </div>
     );
 }
