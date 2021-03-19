@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 
 const Home = () => {
@@ -12,6 +12,12 @@ const Home = () => {
         const newBlogs = blogs.filter(blog => id !== blog.id);
         setBlogs(newBlogs);
     }
+
+    // the useEffect hook runs a function at every render of the component such as when it first loads and/or when the state changes...
+    // to use useEffect, pass it a function. It will run this function at every render...
+    useEffect(() => {
+        console.log("there was a render that occurred, and useEffect ran...");
+    });
 
     return (
         <div className="home">
