@@ -1,4 +1,4 @@
-// npx json-server --watch data/db.json --watch -port 8080
+// npx json-server --watch data/db.json --watch --port 8080
 
 /*
 /blogs           GET            fetch all blogs
