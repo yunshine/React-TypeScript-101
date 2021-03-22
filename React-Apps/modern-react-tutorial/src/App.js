@@ -2,6 +2,7 @@
 import Navbar from './Navbar';
 import Home from './Home';
 import Sandbox from './Sandbox';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
     const title = 'This is the title in the App component...';
@@ -12,17 +13,23 @@ function App() {
     today = mm + '/' + dd + '/' + yyyy;
 
     return (
-        <div className="App">
-            <Navbar />
-            <div className="content">
-                <h2>{title}</h2>
-                <h2>Today's date: {today}</h2>
+        <Router>
+            <div className="App">
+                <Navbar />
+                <div className="content">
+                    {/* <h2>{title}</h2>
+                    <h2>Today's date: {today}</h2>
+                    <br /> */}
+                    <Switch>
+                        <Route path='/'>
+                            <Home />
+                        </Route>
+                    </Switch>
+                </div>
                 <br />
-                <Home />
+                {/* <Sandbox /> */}
             </div>
-            <br />
-            <Sandbox />
-        </div>
+        </Router>
     );
 }
 
