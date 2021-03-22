@@ -3,6 +3,7 @@ import BlogList from './BlogList';
 
 const Home = () => {
     const [blogs, setBlogs] = useState(null);
+    const [isPending, setIsPending] = useState(true);
 
     // const [name, setName] = useState("Yun");
 
@@ -22,12 +23,15 @@ const Home = () => {
             })
             .then(data => {
                 setBlogs(data);
+                setIsPending(false);
             })
     }, []);
     // dependency array options: [ ] an empty array like this will run the useEffect hook on only the initial render; [name] useEffect runs when the value for 'name' changes; [blogs] useEffect runs when the value for 'blogs' changes...
 
     return (
         <div className="home">
+            {/* the template is created conditionally if isPending is true... */}
+            {isPending && <div>Loading...</div>}
             {/* the template is created conditionally if blogs is not null... */}
             {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />}
             {/* <BlogList blogs={blogs.filter(blog => blog.author === "Eunjoo")} title="Eunjoo's Blogs" /> */}
