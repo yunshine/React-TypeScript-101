@@ -1,6 +1,7 @@
 // import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
+import Create from './Create';
 import Sandbox from './Sandbox';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -21,6 +22,9 @@ function App() {
                     <h2>Today's date: {today}</h2>
                     <br /> */}
                     <Switch>
+                        <Route path='/new'>
+                            <Create />
+                        </Route>
                         <Route path='/'>
                             <Home />
                         </Route>
