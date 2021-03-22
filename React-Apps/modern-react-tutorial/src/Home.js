@@ -1,17 +1,21 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
+import useFetch from './useFetch';
 
 const Home = () => {
+    // below... we've decided to call the data we get back from useFetch "blogs"...
+    const { data: blogs, isPending, error } = useFetch('http://localhost:8080/blogs');
+
+    // const [name, setName] = useState("Yun");
+    function handleDelete(id) {
+        const newBlogs = blogs.filter(blog => id !== blog.id);
+        // setBlogs(newBlogs);
+    }
+
+    /* All of this has been moved to the custom hook, 'useFetch'...
     const [blogs, setBlogs] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
-
-    // const [name, setName] = useState("Yun");
-
-    function handleDelete(id) {
-        const newBlogs = blogs.filter(blog => id !== blog.id);
-        setBlogs(newBlogs);
-    }
 
     // the useEffect hook runs a function at every render of the component such as when it first loads and/or when the state changes...
     // to use useEffect, pass it a function. It will run this function at every render...
@@ -36,6 +40,7 @@ const Home = () => {
             })
     }, []);
     // dependency array options: [ ] an empty array like this will run the useEffect hook on only the initial render; [name] useEffect runs when the value for 'name' changes; [blogs] useEffect runs when the value for 'blogs' changes...
+    */
 
     return (
         <div className="home">
