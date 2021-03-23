@@ -22,11 +22,11 @@ function App() {
                     <h2>Today's date: {today}</h2>
                     <br /> */}
                     <Switch>
-                        <Route path='/new'>
-                            <Create />
-                        </Route>
-                        <Route path='/'>
+                        <Route exact path='/'>
                             <Home />
+                        </Route>
+                        <Route path='/create'>
+                            <Create />
                         </Route>
                     </Switch>
                 </div>
