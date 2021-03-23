@@ -8,7 +8,7 @@ const Home = () => {
 
     // const [name, setName] = useState("Yun");
     function handleDelete(id) {
-        const newBlogs = blogs.filter(blog => id !== blog.id);
+        // const newBlogs = blogs.filter(blog => id !== blog.id);
         // setBlogs(newBlogs);
     }
 

@@ -2,11 +2,11 @@
 import Navbar from './Navbar';
 import Home from './Home';
 import Create from './Create';
-import Sandbox from './Sandbox';
+// import Sandbox from './Sandbox';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-    const title = 'This is the title in the App component...';
+    // const title = 'This is the title in the App component...';
     let today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
