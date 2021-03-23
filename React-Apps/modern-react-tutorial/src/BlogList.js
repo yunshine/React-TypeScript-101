@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const BlogList = (props) => {
     return (
         <div className="blog-list">
@@ -6,15 +8,17 @@ const BlogList = (props) => {
 
             {props.blogs.map(blog => (
                 <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
+                    <Link to={`/blogs/${blog.id}`}>
+                        <h2>{blog.title}</h2>
+                    </Link>
                     <p>Written By: {blog.author}</p>
                     {/* how to delete a blog... */}
                     {/* in the onClick, I'm using an anonymous function so that we can pass an argument... */}
                     {/* the handleDelete function should be in the home component and passed down as a prop because that's where the data is... */}
-                    <button onClick={() => props.handleDelete(blog.id)}>Delete Blog</button>
-                </div>
+                    <button button onClick={() => props.handleDelete(blog.id)}>Delete Blog</button>
+                </div >
             ))}
-        </div>
+        </div >
     );
 }
 

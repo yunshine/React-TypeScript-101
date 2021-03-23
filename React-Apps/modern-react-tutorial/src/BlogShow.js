@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 
 const BlogShow = () => {
-    // howParams - how to get the id from the url...
+    // the useParams hook - how to get the id from the url...
     const { id } = useParams();
     return (
         <div className="BlogShow">
