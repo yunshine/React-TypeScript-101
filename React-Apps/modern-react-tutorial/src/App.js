@@ -1,9 +1,10 @@
 // import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
 import Create from './Create';
+import BlogShow from './BlogShow';
 // import Sandbox from './Sandbox';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
     // const title = 'This is the title in the App component...';
@@ -27,6 +28,9 @@ function App() {
                         </Route>
                         <Route path='/create'>
                             <Create />
+                        </Route>
+                        <Route path='/blogs/:id'>
+                            <BlogShow />
                         </Route>
                     </Switch>
                 </div>
