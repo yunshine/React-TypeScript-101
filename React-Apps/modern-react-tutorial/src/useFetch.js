@@ -9,23 +9,35 @@ const useFetch = (url) => {
     // to use useEffect, pass it a function. It will run this function at every render...
     // the second argument of the useEffect hook, called a dependency array, allows you to choose which renders to run this particular useEffect hook...
     useEffect(() => {
+        // use AbortController by 1) associating the AbortController with a specific fetch request by using as an option { signal: abortController.signal }, then we can 2) use the AbortController to stop the fetch...
+        const abortController = new AbortController();
+
         console.log("there was a render that occurred, and useEffect ran...");
-        fetch(url)
-            .then(res => {
-                if (!res.ok) {
-                    throw Error('There was an error, and data could not be fetched...');
-                }
-                return res.json();
-            })
-            .then(data => {
-                setData(data);
-                setIsPending(false);
-                setError(null);
-            })
-            .catch(err => {
-                setIsPending(false);
-                setError(err.message);
-            })
+        setTimeout(() => {
+            fetch(url, { signal: abortController.signal })
+                .then(res => {
+                    if (!res.ok) {
+                        throw Error('There was an error, and data could not be fetched...');
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    setData(data);
+                    setIsPending(false);
+                    setError(null);
+                })
+                .catch(err => {
+                    if (err.name === 'AbortError') {
+                        console.log("This fetch request has been aborted by abortController...");
+                    } else {
+                        setIsPending(false);
+                        setError(err.message);
+                    }
+                })
+        }, 1000);
+
+        // ... the line below aborts the fetch that it is associated with
+        return () => abortController.abort();
     }, [url]);
     // dependency array options: [ ] an empty array like this will run the useEffect hook on only the initial render; [name] useEffect runs when the value for 'name' changes; [blogs] useEffect runs when the value for 'blogs' changes...
 
