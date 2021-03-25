@@ -5,10 +5,18 @@ const Create = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Eunjoo');
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        const blog = { title, body, author };
+        console.log("submitting...", blog);
+    }
+
     return (
         <div className="Create">
             <h2>Create a New Blog Post</h2>
-            <form>
+
+            {/* how to submit a form in React... */}
+            <form onSubmit={handleSubmit}>
                 <label>Blog Title</label>
                 {/* how to use forms in React... */}
                 <input
