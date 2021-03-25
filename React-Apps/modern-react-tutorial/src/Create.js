@@ -1,7 +1,7 @@
 const Create = () => {
     return (
         <div className="Create">
-            <h1>Create a New Blog Post</h1>
+            <h2>Create a New Blog Post</h2>
             <form>
                 <label>Blog Title</label>
                 <input
@@ -24,5 +24,5 @@ const Create = () => {
         </div>
     );
 }
-// testing github connection...
+
 export default Create;
