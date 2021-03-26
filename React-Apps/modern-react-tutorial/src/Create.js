@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// the useHistory hook is used for redirects....
+import { useHistory } from 'react-router-dom';
 
 const Create = () => {
     const [title, setTitle] = useState('');
@@ -6,6 +8,8 @@ const Create = () => {
     const [author, setAuthor] = useState('Eunjoo');
     // isPending used for dynamic text on form submit button...
     const [isPending, setIsPending] = useState(false);
+    // first, to use the useHistory hook, you need to invoke the hook...
+    const history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -21,6 +25,8 @@ const Create = () => {
         }).then(() => {
             console.log("new blog added...");
             setIsPending(false);
+            // how to use the useHistory hook to redirect to a specific page...
+            history.push('/')
         })
     }
 
