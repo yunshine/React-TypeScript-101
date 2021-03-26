@@ -45,7 +45,7 @@ const Home = () => {
     return (
         <div className="home">
             {/* the template is created conditionally if isPending is true... */}
-            {isPending && <div>Loading...</div>}
+            {isPending && <div><span className="loading">Loading...</span></div>}
             {error && <div>{error}</div>}
             {/* the template is created conditionally if blogs is not null... */}
             {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />}
