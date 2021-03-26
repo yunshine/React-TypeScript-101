@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Create from './Create';
 import BlogShow from './BlogShow';
+import NotFound from './NotFound';
 // import Sandbox from './Sandbox';
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
                         </Route>
                         <Route path='/blogs/:id'>
                             <BlogShow />
+                        </Route>
+                        <Route path='*'>
+                            <NotFound />
                         </Route>
                     </Switch>
                 </div>
