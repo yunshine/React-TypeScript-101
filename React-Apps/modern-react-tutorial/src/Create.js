@@ -4,10 +4,14 @@ const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Eunjoo');
+    // isPending used for dynamic text on form submit button...
+    const [isPending, setIsPending] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
         const blog = { title, body, author };
+
+        setIsPending(true);
 
         // how to make a post request in React...
         fetch('http://localhost:8080/blogs', {
@@ -16,6 +20,7 @@ const Create = () => {
             body: JSON.stringify(blog)
         }).then(() => {
             console.log("new blog added...");
+            setIsPending(false);
         })
     }
 
@@ -51,7 +56,8 @@ const Create = () => {
                     <option value="Eunjoo">Eunjoo</option>
                     <option value="Yun">Yun</option>
                 </select>
-                <button>Submit Blog</button>
+                {!isPending && <button>Submit Blog</button>}
+                {isPending && <button disabled>Adding Blog...</button>}
             </form>
         </div>
     );
