@@ -27,7 +27,7 @@ const Create = () => {
             setIsPending(false);
             // how to use the useHistory hook to redirect to a specific page...
             history.push('/')
-        })
+        });
     }
 
     return (

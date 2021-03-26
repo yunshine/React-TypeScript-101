@@ -15,7 +15,7 @@ const BlogList = (props) => {
                     {/* how to delete a blog... */}
                     {/* in the onClick, I'm using an anonymous function so that we can pass an argument... */}
                     {/* the handleDelete function should be in the home component and passed down as a prop because that's where the data is... */}
-                    <button onClick={() => props.handleDelete(blog.id)}>Delete Blog</button>
+                    {/* <button onClick={() => props.handleDelete(blog.id)}>Delete Blog</button> */}
                 </div >
             ))}
         </div >
