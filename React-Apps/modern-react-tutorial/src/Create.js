@@ -8,7 +8,15 @@ const Create = () => {
     const handleSubmit = e => {
         e.preventDefault();
         const blog = { title, body, author };
-        console.log("submitting...", blog);
+
+        // how to make a post request in React...
+        fetch('http://localhost:8080/blogs', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(blog)
+        }).then(() => {
+            console.log("new blog added...");
+        })
     }
 
     return (
