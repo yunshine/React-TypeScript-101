@@ -1,4 +1,4 @@
-const SneakerIndex = () => {
+const SneakersIndex = () => {
     const sneakers = [
         {
             brand: "Nike",
@@ -17,10 +17,10 @@ const SneakerIndex = () => {
     ];
 
     return (
-        <div className="SneakerIndex">
-            <p>This is the SneakerIndex component...</p>
+        <div className="SneakersIndex">
+            <p>This is the SneakersIndex component...</p>
             {sneakers.map(sneaker => (
-                <div className="SneakerIndexCard" key={sneaker.id}>
+                <div className="SneakersIndexCard" key={sneaker.id}>
                     <h2>{sneaker.brand} {sneaker.name}</h2>
                 </div>
             ))}
@@ -29,4 +29,4 @@ const SneakerIndex = () => {
     );
 }
 
-export default SneakerIndex;
+export default SneakersIndex;

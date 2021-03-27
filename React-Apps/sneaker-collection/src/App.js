@@ -1,12 +1,19 @@
 import './App.css';
-import SneakerIndex from './SneakerIndex';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import SneakersIndex from './SneakersIndex';
 
 function App() {
     return (
-        <div className="App">
-            <h1>This is the App component...</h1>
-            <SneakerIndex />
-        </div >
+        <Router>
+            <div className="App">
+                <h1>This is the App component...</h1>
+                <Switch>
+                    <Route path='/'>
+                        <SneakersIndex />
+                    </Route>
+                </Switch>
+            </div >
+        </Router>
     );
 }
 
