@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SneakersIndex from './SneakersIndex';
+import Home from './Home';
 import SneakerShow from './SneakerShow';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
                 <h1>This is the App component...</h1>
                 <Switch>
                     <Route exact path='/'>
-                        <SneakersIndex />
+                        <Home />
                     </Route>
                     <Route path='/sneakers/:id'>
                         <SneakerShow />
