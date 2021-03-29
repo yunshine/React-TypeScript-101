@@ -7,7 +7,7 @@ const SneakersIndex = (props) => {
 
             {props.sneakers.map(sneaker => (
                 <div className="HomeCard" key={sneaker.id}>
-                    <Link to={`/sneakers/${sneaker.id}`}>
+                    <Link to={`sneakers/${sneaker.id}`}>
                         <h2>{sneaker.brand} {sneaker.name}</h2>
                     </Link>
                 </div>
