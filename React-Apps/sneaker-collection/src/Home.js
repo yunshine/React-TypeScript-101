@@ -40,6 +40,8 @@ const Home = () => {
     return (
         <div className="Home">
             <p>This is the Home component...</p>
+            {isPending && <h1>Loading...</h1>}
+            {error && <h1>{error.message}</h1>}
             {data && <SneakersIndex sneakers={data} />}
 
         </div>
