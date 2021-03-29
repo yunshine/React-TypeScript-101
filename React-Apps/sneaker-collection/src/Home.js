@@ -11,7 +11,6 @@ const Home = () => {
             {isPending && <h1>Loading...</h1>}
             {error && <h1>{error.message}</h1>}
             {sneakers && <SneakersIndex sneakers={sneakers} />}
-
         </div>
     );
 }

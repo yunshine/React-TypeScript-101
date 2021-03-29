@@ -12,6 +12,7 @@ const SneakerShow = () => {
             {isPending && <h1>Loading...</h1>}
             {error && <h1>{error.message}</h1>}
             {sneaker && <h2>{sneaker.name}</h2>}
+            {sneaker && <img src={sneaker.photo} className="SneakerPhoto" alt={`${sneaker.brand} ${sneaker.name}`} />}
         </div>
     );
 }

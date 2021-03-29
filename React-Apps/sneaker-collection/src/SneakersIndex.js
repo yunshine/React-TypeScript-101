@@ -10,6 +10,7 @@ const SneakersIndex = (props) => {
                     <Link to={`sneakers/${sneaker.id}`}>
                         <h2>{sneaker.brand} {sneaker.name}</h2>
                     </Link>
+                    <img src={sneaker.photo} className="SneakerPhoto" alt={`${sneaker.brand} ${sneaker.name}`} />
                 </div>
             ))}
         </div>
