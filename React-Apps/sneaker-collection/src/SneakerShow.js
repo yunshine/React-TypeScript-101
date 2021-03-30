@@ -7,14 +7,17 @@ const SneakerShow = () => {
 
     const { data: sneaker, isPending, error } = useFetch('http://localhost:8080/sneakers/' + id);
 
-    const handleClick = () => {
+    const handleDelete = () => {
         fetch('http://localhost:8080/sneakers/' + id, {
             method: 'DELETE'
         }).then(() => {
             console.log("sneaker deleted...");
             history.push('/');
         });
+    }
 
+    const handleEdit = () => {
+        console.log("in the handleEdit function...");
     }
 
     return (
@@ -24,7 +27,8 @@ const SneakerShow = () => {
             {error && <h1>{error.message}</h1>}
             {sneaker && <h2>{sneaker.name}</h2>}
             {sneaker && <img src={sneaker.photo} className="SneakerPhoto" alt={`${sneaker.brand} ${sneaker.name}`} />}
-            <button onClick={handleClick}>Delete This Sneaker</button>
+            <button onClick={handleEdit}>Edit This Sneaker</button>
+            <button onClick={handleDelete}>Delete This Sneaker</button>
         </div>
     );
 }
