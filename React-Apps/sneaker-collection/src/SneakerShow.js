@@ -17,7 +17,7 @@ const SneakerShow = () => {
     }
 
     const handleEdit = () => {
-        console.log("in the handleEdit function...");
+        history.push(`/sneakers/${id}/edit`);
     }
 
     return (

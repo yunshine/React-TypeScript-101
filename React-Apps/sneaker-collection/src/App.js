@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import SneakerShow from './SneakerShow';
 import Create from './Create';
+import Edit from './Edit';
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                     </Route>
                     <Route exact path='/sneakers/create'>
                         <Create />
+                    </Route>
+                    <Route exact path='/sneakers/:id/edit'>
+                        <Edit />
                     </Route>
                     <Route path='/sneakers/:id'>
                         <SneakerShow />
