@@ -1,3 +1,36 @@
+/* CSS Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  /* Navbar Styles */
+.Navbar {
+    height: 48px;
+    background-color: lightslategrey;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.Navbar a {
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    color: black;
+    background-color: ivory;
+    padding: 4px 32px;
+    border-radius: 4px;
+    margin: 0 8px;
+}
+
+.Navbar a:hover {
+    color: darkslategrey;
+    background-color: floralwhite;
+    box-shadow: 1px 1px 4px 1px midnightblue;
+}
+
 .SneakerPhoto {
     width: 160px;
 }
