@@ -98,12 +98,66 @@
     width: 248px;
     margin-top: 8px;
     margin-bottom: 8px;
+    border: 1px solid grey;
 }
 
 .SneakerShowCard button:hover {
     background-color: white;
     cursor: pointer;
-    box-shadow: 1px 1px 4px 1px lightslategrey;
+    box-shadow: 1px 1px 4px 1px grey;
+}
+
+/* Form Styles */
+Form {
+    max-width: 400px;
+    margin: 16px auto;
+    text-align: center;
+}
+Form label {
+    text-align: left;
+    display: block;
+}
+Form h2 {
+    font-size: 20px;
+    color: #f1356d;
+    margin-bottom: 30px;
+}
+Form input {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+}
+Form button {
+    background: #f1356d;
+    color: #fff;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+Form button {
+    color: darkslategrey;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    background-color: white;
+    width: 248px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 1px solid grey;
+}
+
+Form button:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px 1px grey;
 }
 
   /* Misc Styles */
