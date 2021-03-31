@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { useParams, useHistory } from "react-router-dom";
 
 const Edit = () => {
+
+
+
     const [brand, setBrand] = useState('');
     const [name, setName] = useState('');
     const [colorway, setColorway] = useState('');
@@ -17,14 +20,14 @@ const Edit = () => {
 
         setIsPending(true);
 
-        fetch('http://localhost:8080/sneakers', {
-            method: 'POST',
+        fetch('http://localhost:8080/sneakers/' + id, {
+            method: 'PUT',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(sneaker)
         }).then(() => {
-            console.log("new sneaker added...");
+            console.log("sneaker data updated...");
             setIsPending(false);
-            history.push('/')
+            history.push('/sneakers/' + id);
         });
     }
 
