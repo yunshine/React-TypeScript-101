@@ -23,8 +23,8 @@ const SneakerShow = () => {
     return (
         <div className="SneakerShow">
             <p>this is the sneakershow component for sneaker id number {id}</p>
-            {isPending && <h1>Loading...</h1>}
-            {error && <h1>{error.message}</h1>}
+            {isPending && <h1 className="dynamic-messages">Loading...</h1>}
+            {error && <h1 className="dynamic-messages">{error.message}</h1>}
             {sneaker && <h2>{sneaker.name}</h2>}
             {sneaker && <img src={sneaker.photo} className="SneakerPhoto" alt={`${sneaker.brand} ${sneaker.name}`} />}
             <button onClick={handleEdit}>Edit This Sneaker</button>

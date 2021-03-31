@@ -44,8 +44,8 @@ const Edit = () => {
     return (
         <div className="Edit">
             <h2>Edit sneaker...the id is {id}</h2>
-            {isPending && <h1>Loading...</h1>}
-            {error && <h1>{error.message}</h1>}
+            {isPending && <h1 className="dynamic-messages">Loading...</h1>}
+            {error && <h1 className="dynamic-messages">{error.message}</h1>}
 
             {sneaker && <form onSubmit={handleSubmit}>
                 <label>Sneaker Brand</label>

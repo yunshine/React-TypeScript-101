@@ -7,9 +7,8 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <p>This is the Home component...</p>
-            {isPending && <h1>Loading...</h1>}
-            {error && <h1>{error.message}</h1>}
+            {isPending && <h1 className="dynamic-messages">Loading Sneakers...</h1>}
+            {error && <h1 className="dynamic-messages">{error.message}</h1>}
             {sneakers && <SneakersIndex sneakers={sneakers} />}
         </div>
     );

@@ -31,7 +31,7 @@ const useFetch = (url) => {
                         setError(err.message);
                     }
                 })
-        }, 1000);
+        }, 850);
         return () => abortController.abort();
     }, [url]);
 

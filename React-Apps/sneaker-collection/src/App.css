@@ -4,8 +4,10 @@
     padding: 0px;
     box-sizing: border-box;
     font-size: 14px;
-  }
-  
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(40, 40, 40, 1);
+}
+
   /* Navbar Styles */
 .Navbar {
     height: 48px;
@@ -16,21 +18,73 @@
 }
 
 .Navbar a {
+    color: darkslategrey;
     text-decoration: none;
     transition: all .2s ease-in-out;
-    color: black;
     background-color: ivory;
     padding: 4px 32px;
     border-radius: 4px;
     margin: 0 8px;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .Navbar a:hover {
-    color: darkslategrey;
+    color: black;
     background-color: floralwhite;
     box-shadow: 1px 1px 4px 1px midnightblue;
 }
 
-.SneakerPhoto {
-    width: 160px;
+/* Sneakers Index Styles */
+.SneakersIndex {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.SneakersIndex-card {
+    margin: 16px;
+    text-align: center;
+    border: 1px solid lightslategrey;
+    padding: 16px;
+    transition: all .1s ease-in-out;
+    border-radius: 2px;
+    text-decoration: none;
+    min-width: 320px;
+    display: block;
+}
+
+.SneakersIndex-card:hover {
+    box-shadow: 1px 1px 4px 1px lightslategrey;
+}
+
+.SneakersIndex-card h2{
+    color: darkslategrey;
+    margin: 12px 0 4px 0;
+    letter-spacing: 1.4px;
+    font-weight: 200;
+    font-size: 17px;
+}
+
+.SneakersIndex-card h4{
+    color: darkslategrey;
+    letter-spacing: 1.2px;
+    font-weight: 200;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+  /* Misc Styles */
+.dynamic-messages {
+    font-size: 32px;
+    font-weight: 200;
+    letter-spacing: 4px;
+    margin: 16px 16px;
+}
+
+img {
+    width: 200px;
 }
