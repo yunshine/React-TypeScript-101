@@ -1,24 +1,34 @@
-import { useState } from 'react';
+import useFetch from './hooks/useFetch';
+import { useState, useEffect } from 'react';
 import { useParams, useHistory } from "react-router-dom";
 
 const Edit = () => {
-
-
+    const { id } = useParams();
+    const { data: sneaker, isPending, error } = useFetch('http://localhost:8080/sneakers/' + id);
 
     const [brand, setBrand] = useState('');
     const [name, setName] = useState('');
     const [colorway, setColorway] = useState('');
     const [photo, setPhoto] = useState('');
-    // isPending used for dynamic text on form submit button...
-    const [isPending, setIsPending] = useState(false);
-    const { id } = useParams();
+    // isUpdating used for dynamic text on form submit button...
+    const [isUpdating, setIsUpdating] = useState(false);
     const history = useHistory();
+
+    useEffect(() => {
+        if (sneaker !== null) {
+            console.log("Adding data to form input fields...");
+            setBrand(sneaker.brand);
+            setName(sneaker.name);
+            setColorway(sneaker.colorway);
+            setPhoto(sneaker.photo);
+        }
+    }, [sneaker]);
 
     const handleSubmit = e => {
         e.preventDefault();
         const sneaker = { brand, name, colorway, photo };
 
-        setIsPending(true);
+        setIsUpdating(true);
 
         fetch('http://localhost:8080/sneakers/' + id, {
             method: 'PUT',
@@ -26,7 +36,7 @@ const Edit = () => {
             body: JSON.stringify(sneaker)
         }).then(() => {
             console.log("sneaker data updated...");
-            setIsPending(false);
+            setIsUpdating(false);
             history.push('/sneakers/' + id);
         });
     }
@@ -34,8 +44,10 @@ const Edit = () => {
     return (
         <div className="Edit">
             <h2>Edit sneaker...the id is {id}</h2>
+            {isPending && <h1>Loading...</h1>}
+            {error && <h1>{error.message}</h1>}
 
-            {/* <form onSubmit={handleSubmit}>
+            {sneaker && <form onSubmit={handleSubmit}>
                 <label>Sneaker Brand</label>
                 <input
                     type="text"
@@ -65,9 +77,9 @@ const Edit = () => {
                     onChange={(e) => setPhoto(e.target.value)}
                 />
 
-                {!isPending && <button>Submit Blog</button>}
-                {isPending && <button disabled>Adding Blog...</button>}
-            </form> */}
+                {!isUpdating && <button>Submit Sneaker</button>}
+                {isUpdating && <button disabled>Updating Sneaker Data...</button>}
+            </form>}
         </div>
     );
 }

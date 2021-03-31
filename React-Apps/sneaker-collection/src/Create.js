@@ -62,8 +62,8 @@ const Create = () => {
                     onChange={(e) => setPhoto(e.target.value)}
                 />
 
-                {!isPending && <button>Submit Blog</button>}
-                {isPending && <button disabled>Adding Blog...</button>}
+                {!isPending && <button>Submit Sneaker</button>}
+                {isPending && <button disabled>Adding Sneaker...</button>}
             </form>
         </div>
     );
