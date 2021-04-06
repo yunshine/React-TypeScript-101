@@ -2,10 +2,42 @@ import { useState } from 'react';
 
 const Home = () => {
     const [city, setCity] = useState('');
+    const [data, setData] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e);
+
+        // let url = ;
+
+        console.log(url);
+
+        fetch(url)
+            .then(res => {
+                if (!res.ok) {
+                    console.log("fetching...");
+
+                    throw Error('There was an error, and data could not be fetched...');
+                }
+                return res.json();
+            })
+            .then(data => {
+                setData(data);
+                setIsPending(false);
+                setError(null);
+                console.log(data);
+            })
+            .catch(err => {
+                if (err.name === 'AbortError') {
+                    console.log("This fetch request has been aborted by abortController...");
+                } else {
+                    setIsPending(false);
+                    setError(err.message);
+                    console.log("there was an error", err);
+                }
+            });
     }
 
     return (
