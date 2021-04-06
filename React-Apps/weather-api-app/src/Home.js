@@ -1,41 +1,38 @@
 import { useState } from 'react';
+import WeatherReport from './WeatherReport';
 
 require('dotenv').config();
 
 const Home = () => {
     const [city, setCity] = useState('');
     const [data, setData] = useState(null);
-    const [isPending, setIsPending] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`;
-
-        console.log(url);
+        setIsLoading(true);
 
         setTimeout(() => {
-            fetch(url)
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`)
                 .then(res => {
                     if (!res.ok) {
                         console.log("fetching...");
-
                         throw Error('There was an error, and data could not be fetched...');
                     }
                     return res.json();
                 })
                 .then(data => {
                     setData(data);
-                    setIsPending(false);
+                    setIsLoading(false);
                     setError(null);
-                    console.log(data);
+                    console.log("Data From Fetch: ", data);
                 })
                 .catch(err => {
                     if (err.name === 'AbortError') {
                         console.log("This fetch request has been aborted by abortController...");
                     } else {
-                        setIsPending(false);
+                        setIsLoading(false);
                         setError(err.message);
                         console.log("there was an error...", err);
                     }
@@ -55,6 +52,12 @@ const Home = () => {
                 />
                 <button>submit city</button>
             </form>
+
+            {error && <h2>there was an error; {error.message}</h2>}
+            {/* {!isLoading && <h2>isPending is False</h2>} */}
+            {isLoading && <h2>Loading weather report...</h2>}
+            {data && <WeatherReport weatherData={data} />}
+
         </div>
     );
 }
