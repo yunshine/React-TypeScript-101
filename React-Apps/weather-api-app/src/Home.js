@@ -11,6 +11,7 @@ const Home = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setData(null);
         setIsLoading(true);
 
         setTimeout(() => {
