@@ -10,18 +10,19 @@ const WeatherReport = (props) => {
         // Minutes part from the timestamp
         let minutes = "0" + date.getMinutes();
         // Seconds part from the timestamp
-        let seconds = "0" + date.getSeconds();
-
+        // let seconds = "0" + date.getSeconds();
+        let suffix = "am";
+        // Dynamic AM/PM
+        if (hours === 12) suffix = "pm";
+        if (hours > 12) {
+            hours -= 12;
+            suffix = "pm";
+        }
         // Will display time in 10:30:23 format
         // let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-        let formattedTime = hours + ':' + minutes.substr(-2);
-
-        console.log(formattedTime);
-        console.log("testing...")
+        let formattedTime = hours + ':' + minutes.substr(-2) + suffix;
         return formattedTime;
     };
-
-
 
     return (
         <div className="WeatherReport">
