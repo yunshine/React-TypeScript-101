@@ -50,6 +50,7 @@ const Home = () => {
                     required
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
+                    label="city name"
                 />
                 <button>submit city</button>
             </form>

@@ -1,3 +1,33 @@
 .App {
     color: purple;
 }
+
+form {
+    color: green;
+    max-width: 480px;
+    margin: 16px auto;
+    text-align: center;
+}
+
+form label {
+    /* text-align: left; */
+    /* display: block; */
+    /* margin: 0; */
+}
+
+form input {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 4px 0;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+}
+form button {
+    background: #f1356d;
+    color: #fff;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
