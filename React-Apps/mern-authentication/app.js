@@ -12,6 +12,23 @@ mongoose.connect('mongodb://localhost:27017/mernauth', {
     console.log("Successfully connected to the mernauth database!");
 });
 
+
+const User = require('./models/User');
+const userInput = {
+    username: "yun",
+    password: "pasword",
+    role: "admin"
+}
+
+const user = new User(userInput);
+user.save((err, document) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log(document);
+});
+
+
 app.listen(8080, () => {
     console.log("Welcome to MERN-Auth! You've created a server using Express. The server has started and is now listening on port 3000...");
 });
