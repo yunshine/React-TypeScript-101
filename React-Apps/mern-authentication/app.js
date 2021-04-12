@@ -25,7 +25,7 @@ user.save((err, document) => {
     if (err) {
         console.log(err);
     }
-    console.log(document);
+    // console.log(document);
 });
 
 
