@@ -17,7 +17,7 @@ app.use('/user', userRouter);
 
 
 app.listen(8080, () => {
-    console.log("Welcome to MERN-Auth! You've created a server using Express. The server has started and is now listening on port 3000...");
+    console.log("Welcome to MERN-Auth! You've created a server using Express. The server has started and is now listening on port 8080...");
 });
 
 // const User = require('./models/User');
