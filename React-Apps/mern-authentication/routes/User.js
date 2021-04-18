@@ -5,6 +5,7 @@ const passportConfig = require('../passport');
 const JWT = require('jsonwebtoken');
 const User = require('../models/User');
 const Todo = require('../models/Todo');
+const { json } = require('express');
 
 const signToken = userID => {
     return JWT.sign({
@@ -41,6 +42,11 @@ userRouter.post('/login', passport.authenticate('local', { session: false }), (r
         res.cookie('access_token', token, { httpOnly: true, sameSite: true });
         res.status(200).json({ isAuthenticated: true, user: { username, role } });
     }
+});
+
+userRouter.get('/logout', passport.authenticate('jwt', { session: false }), (req, res) => {
+    res.clearCookie('access_token');
+    res.json({ user: { username: "", role: "" }, success: true });
 });
 
 module.exports = userRouter;
