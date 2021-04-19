@@ -49,4 +49,22 @@ userRouter.get('/logout', passport.authenticate('jwt', { session: false }), (req
     res.json({ user: { username: "", role: "" }, success: true });
 });
 
+userRouter.post('/todo', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const todo = new Todo(req.body);
+    todo.save(err => {
+        if (err) {
+            res.status(500).json({ message: { msgBody: "An error has occurred", msgError: true } });
+        } else {
+            req.user.todos.push(todo);
+            req.user.save(err => {
+                if (err) {
+                    res.status(500).json({ message: { msgBody: "An error has occurred", msgError: true } });
+                } else {
+                    res.status(200).json({ message: { msgBody: "Todo successfully created", msgError: false } });
+                }
+            });
+        }
+    });
+});
+
 module.exports = userRouter;
