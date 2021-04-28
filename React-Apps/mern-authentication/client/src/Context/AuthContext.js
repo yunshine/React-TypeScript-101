@@ -3,6 +3,7 @@ import AuthService from '../Services/AuthService';
 
 export const AuthContext = createContext();
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
