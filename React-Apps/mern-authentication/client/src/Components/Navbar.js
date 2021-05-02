@@ -6,6 +6,15 @@ import { AuthContext } from '../Context/AuthContext';
 const Navbar = (props) => {
     const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);
 
+    const onClickLogoutHandler = () => {
+        AuthService.logout().then(data => {
+            if (data.success) {
+                setUser(data.user);
+                setIsAuthenticated(false);
+            }
+        });
+    }
+
     const unauthenticatedNavbar = () => {
         return (
             <>
