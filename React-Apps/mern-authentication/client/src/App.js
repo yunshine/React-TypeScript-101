@@ -1,5 +1,8 @@
 import { useContext } from 'react';
 import { AuthContext } from './Context/AuthContext';
+import Navbar from './Components/Navbar';
+// import Home from './Components/Home';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
     const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -7,9 +10,10 @@ function App() {
     console.log("Auth Info from App.js: ", user, isAuthenticated);
 
     return (
-        <div className="App">
-            this is the app component...
-        </div>
+        <Router>
+            <Navbar />
+            {/* <Route exact path='/' component={Home} /> */}
+        </Router>
     );
 }
 
