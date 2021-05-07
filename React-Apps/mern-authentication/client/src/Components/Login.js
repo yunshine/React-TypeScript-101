@@ -12,8 +12,10 @@ const Login = (props) => {
         console.log("form submitted...");
     }
 
-    function onChange() {
-        console.log("Something is changing...");
+    const onChange = e => {
+        e.preventDefault();
+        setUser({ ...user, [e.target.name]: e.target.value });
+        console.log("from onChange: ", user);
     }
 
     return (
