@@ -38,7 +38,7 @@ const Login = (props) => {
                     type="submit">Log In</button>
             </form>
 
-            {message ? <Message message={message} /> : null}
+            {/* {message ? <Message message={message} /> : null} */}
         </div>
     );
 }
