@@ -8,8 +8,20 @@ const Login = (props) => {
     const [message, setMessage] = useState(null);
     const authContext = useContext(AuthContext);
 
-    function onSubmit() {
+    const onSubmit = e => {
+        e.preventDefault();
         console.log("form submitted...");
+        AuthService.login(user).then(data => {
+            const { isAuthenticated, user, message } = data;
+            if (isAuthenticated) {
+                authContext.setUser(user);
+                authContext.setIsAuthenticated(isAuthenticated);
+                props.history.push('/todos');
+            } else {
+                setMessage(message);
+            }
+        });
+
     }
 
     const onChange = e => {
