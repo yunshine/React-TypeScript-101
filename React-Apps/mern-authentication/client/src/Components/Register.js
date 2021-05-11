@@ -1,25 +1,34 @@
-import { useState, useContext } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import AuthService from '../Services/AuthService';
 import Message from './Message';
-import { AuthContext } from '../Context/AuthContext';
 
-const Login = (props) => {
+const Register = (props) => {
     const [user, setUser] = useState({ username: '', password: '' });
     const [message, setMessage] = useState(null);
-    const authContext = useContext(AuthContext);
+    let timerID = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            clearTimeout(timerID);
+        };
+    }, []);
+
+    const resetForm = () => {
+        console.log("resetForm function called...");
+    }
 
     const onSubmit = e => {
         e.preventDefault();
         console.log("form submitted...");
-        AuthService.login(user).then(data => {
-            console.log("Data from Login.js: ", data);
-            const { isAuthenticated, user, message } = data;
-            if (isAuthenticated) {
-                authContext.setUser(user);
-                authContext.setIsAuthenticated(isAuthenticated);
-                props.history.push('/todos');
-            } else {
-                setMessage(message);
+        AuthService.register(user).then(data => {
+            console.log("Data from Register.js: ", data);
+            const { message } = data;
+            setMessage(message);
+            resetForm();
+            if (!message.msgError) {
+                timerID = setTimeout(() => {
+                    props.history.push('/login');
+                }, 2000);
             }
         });
 
@@ -55,4 +64,4 @@ const Login = (props) => {
     );
 }
 
-export default Login;
+export default Register;
