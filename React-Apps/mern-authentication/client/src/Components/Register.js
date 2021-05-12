@@ -3,7 +3,7 @@ import AuthService from '../Services/AuthService';
 import Message from './Message';
 
 const Register = (props) => {
-    const [user, setUser] = useState({ username: '', password: '' });
+    const [user, setUser] = useState({ username: '', password: '', role: '' });
     const [message, setMessage] = useState(null);
     let timerID = useRef(null);
 
@@ -15,6 +15,7 @@ const Register = (props) => {
 
     const resetForm = () => {
         console.log("resetForm function called...");
+        setUser({ username: "", pasword: "", role: "" });
     }
 
     const onSubmit = e => {
@@ -31,7 +32,6 @@ const Register = (props) => {
                 }, 2000);
             }
         });
-
     }
 
     const onChange = e => {
@@ -42,7 +42,7 @@ const Register = (props) => {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <h3>Please Sign In</h3>
+                <h3>Please Register</h3>
                 <label htmlFor="username" className="sr-only">Username: </label>
                 <input type="text"
                     name="username"
@@ -55,8 +55,14 @@ const Register = (props) => {
                     onChange={onChange}
                     className="form-control"
                     placeholder="Enter Password" />
+                <label htmlFor="role" className="sr-only">Role: </label>
+                <input type="text"
+                    name="role"
+                    onChange={onChange}
+                    className="form-control"
+                    placeholder="Enter Role (admin/user)" />
                 <button className="btn btn-lg btn-primary btn-block"
-                    type="submit">Log In</button>
+                    type="submit">Register</button>
             </form>
 
             {message ? <Message message={message} /> : null}
