@@ -9,6 +9,12 @@ const Todos = (props) => {
     const [message, setMessage] = useState(null);
     const AuthContext = useContext(AuthContext);
 
+    useEffect(() => {
+        TodoService.getTodos().then(data => {
+            setTodos(data.todos);
+        });
+    }, []);
+
     return (
 
     );
