@@ -36,6 +36,7 @@ const Todos = (props) => {
                     onChange={ } />
                 <button type="submit" className="btn btn-lg btn-primary btn-block">Submit</button>
             </form>
+            {message ? <Message message={message} /> : null}
         </div>
     );
 }
