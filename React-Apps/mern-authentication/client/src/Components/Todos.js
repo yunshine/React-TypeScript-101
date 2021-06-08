@@ -15,6 +15,26 @@ const Todos = (props) => {
         });
     }, []);
 
+    const onSubmit = e => {
+        e.preventDefault();
+        TodoService.postTodo(todo).then(data => {
+            const { message } = data;
+            resetForm();
+            if (!message.msgError) {
+                TodoService.getTodos().then(getData => {
+                    setTodos(getData.todos);
+                    setMessage(message);
+                });
+            } else if (message.msgBody === "unauthorized") {
+                setMessage(message);
+                AuthContext.setUser({ username: "", role: "" });
+                AuthContext.setIsAuthenticaged(false);
+            } else {
+                setMessage(message);
+            }
+        });
+    }
+
     return (
         <div>
             <ul className="list-group">
