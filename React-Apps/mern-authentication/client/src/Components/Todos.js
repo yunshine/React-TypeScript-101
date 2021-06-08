@@ -35,6 +35,11 @@ const Todos = (props) => {
         });
     }
 
+    const onChange = e => {
+        setTodo({ name: e.target.value });
+
+    }
+
     return (
         <div>
             <ul className="list-group">
