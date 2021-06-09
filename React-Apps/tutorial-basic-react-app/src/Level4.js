@@ -7,7 +7,6 @@ const Level4 = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // alert("hi");
         setTodoList([...todoList, todo]);
         setTodo("");
     }

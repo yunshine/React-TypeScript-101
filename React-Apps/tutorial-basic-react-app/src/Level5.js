@@ -9,7 +9,6 @@ const Level5 = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // alert("hi");
         setTodoList([...todoList, todo]);
         setTodo("");
     }
@@ -48,11 +47,6 @@ const Level5 = () => {
                 <button type="submit">submit todo item</button>
             </form>
             <br />
-            {/* <div>
-                {todoList.map((item, i) => {
-                    return <h3 key={i}>{i + 1}) {item}</h3>
-                })}
-            </div> */}
 
             <div>
                 <h2>{count}</h2>

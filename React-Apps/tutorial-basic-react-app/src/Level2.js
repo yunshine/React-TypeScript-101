@@ -3,6 +3,9 @@ import { useState } from 'react';
 const Level2 = () => {
     const [count, setCount] = useState(0);
     // let number = 10;
+    // const numberUp = () => {
+    //     number += 1;
+    // }
 
     const countUp = () => {
         setCount(count + 1);
@@ -16,9 +19,6 @@ const Level2 = () => {
         setCount(0);
     }
 
-    // const numberUp = () => {
-    //     number += 1;
-    // }
 
     return (
         <div>

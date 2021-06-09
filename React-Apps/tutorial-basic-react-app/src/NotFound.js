@@ -1,6 +1,6 @@
 const NotFound = () => {
     return (
-        <h1>this is notfound...</h1>
+        <h1>You seem to be lost...</h1>
     );
 }
 
