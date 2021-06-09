@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import TodoItem from './TodoItem';
+import Message from './Message';
 import TodoService from '../Services/TodoService';
 import { AuthContext } from '../Context/AuthContext';
 
@@ -7,7 +8,7 @@ const Todos = (props) => {
     const [todo, setTodo] = useState({ name: "" });
     const [todos, setTodos] = useState([]);
     const [message, setMessage] = useState(null);
-    const AuthContext = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
 
     useEffect(() => {
         TodoService.getTodos().then(data => {
@@ -27,8 +28,8 @@ const Todos = (props) => {
                 });
             } else if (message.msgBody === "unauthorized") {
                 setMessage(message);
-                AuthContext.setUser({ username: "", role: "" });
-                AuthContext.setIsAuthenticaged(false);
+                authContext.setUser({ username: "", role: "" });
+                authContext.setIsAuthenticaged(false);
             } else {
                 setMessage(message);
             }
@@ -37,7 +38,10 @@ const Todos = (props) => {
 
     const onChange = e => {
         setTodo({ name: e.target.value });
+    }
 
+    const resetForm = () => {
+        setTodo({ name: "" });
     }
 
     return (
@@ -45,7 +49,7 @@ const Todos = (props) => {
             <ul className="list-group">
                 {
                     todos.map(todo => {
-                        return <TodoItem key={todo_id} todo={todo} />
+                        return <TodoItem key={todo._id} todo={todo} />
                     })
                 }
             </ul>
@@ -58,7 +62,7 @@ const Todos = (props) => {
                     name="todo"
                     placeholder="Please Enter Todo Item"
                     value={todo.name}
-                    onChange={ } />
+                    onChange={onChange} />
                 <button type="submit" className="btn btn-lg btn-primary btn-block">Submit</button>
             </form>
             {message ? <Message message={message} /> : null}
