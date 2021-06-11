@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Todos from './Components/Todos';
+import Admin from './Components/Admin';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
             <Route path='/todos' component={Todos} />
+            <Route path='/admin' component={Admin} />
         </Router>
     );
 }
