@@ -19,9 +19,9 @@ const Level3 = () => {
     return (
         <div>
             <h2>{count}</h2>
-            <button onClick={countUp}>Up</button>
-            <button onClick={countDown}>Down</button>
-            <button onClick={countReset}>Reset</button>
+            <button onClick={countUp}>Count Up</button>
+            <button onClick={countDown}>Count Down</button>
+            <button onClick={countReset}>Count Reset</button>
 
             {count > 2 ? <Count count={count} /> : null}
 
