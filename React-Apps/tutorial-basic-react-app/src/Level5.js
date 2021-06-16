@@ -34,7 +34,7 @@ const Level5 = () => {
     }
 
     useEffect(() => {
-        alert("this page is loading...");
+        alert("React is rendering something...");
         setCount(count * 5);
     }, [todoList])
 
