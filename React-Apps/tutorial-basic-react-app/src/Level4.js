@@ -24,6 +24,7 @@ const Level4 = () => {
                 <Link to='/level5'>
                     <h2>Link to Level 5</h2>
                 </Link>
+                <a href="www.instagram.com">click here</a>
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ import Level3 from './Level3';
 import Level4 from './Level4';
 import Level5 from './Level5';
 import Review from './Review';
+import Practice from './Practice';
 import NotFound from './NotFound';
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
 
                     <Route exact path='/level5'>
                         <Level5 />
+                    </Route>
+
+                    <Route exact path='/practice'>
+                        <Practice />
                     </Route>
 
                     <Route exact path='/review'>

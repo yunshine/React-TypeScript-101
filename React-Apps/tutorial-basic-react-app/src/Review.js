@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Name from './Name';
 
 const Review = () => {
-    const [name, setName] = useState("Hello!")
+    const [name, setName] = useState("Hello!");
 
     const yun = () => {
         setName("Yun");
