@@ -3,6 +3,9 @@ import { Route, Redirect } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 // This component protects the routes that you should be logged in for...
 
-const PrivateRoute = (props) => {
+// destructured props parameter and renamed...
+// const PrivateRoute = (props) => {
+const PrivateRoute = ({ component: Component, roles, ...rest }) => {
+    const { isAuthenticated, user } = useContext(AuthContext);
 
 }
