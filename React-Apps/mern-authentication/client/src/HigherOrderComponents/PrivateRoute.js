@@ -8,4 +8,13 @@ import { AuthContext } from "../Context/AuthContext";
 const PrivateRoute = ({ component: Component, roles, ...rest }) => {
     const { isAuthenticated, user } = useContext(AuthContext);
 
+    return (
+        <Route {...rest} render={props => {
+            if (!isAuthenticated) {
+                return <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+            }
+        }} />
+    )
 }
+
+export default PrivateRoute;
