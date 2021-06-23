@@ -7,6 +7,7 @@ import Register from './Components/Register';
 import Todos from './Components/Todos';
 import Admin from './Components/Admin';
 import PrivateRoute from './HigherOrderComponents/PrivateRoute';
+import UnPrivateRoute from './HigherOrderComponents/UnPrivateRoute';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
         <Router>
             <Navbar />
             <Route exact path='/' component={Home} />
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
+
+            <UnPrivateRoute path='/login' component={Login} />
+            <UnPrivateRoute path='/register' component={Register} />
 
             <PrivateRoute path='/todos' component={Todos} roles={["user", "admin"]} />
             <PrivateRoute Route path='/admin' component={Admin} roles={["admin"]} />
