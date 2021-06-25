@@ -70,3 +70,41 @@ let BreadthFirstSearch = (tree, rootNode, searchValue) => {
     }
     console.log("Sorry, no such node found :(");
 }
+
+// ----------------------------------------------------------------------------------------------
+// The Data...
+const airports = 'PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM'.split(" ");
+
+const routes = [
+    ['PHX', 'LAX'],
+    ['PHX', 'JFK'],
+    ['JFK', 'OKC'],
+    ['JFK', 'HEL'],
+    ['JFK', 'LOS'],
+    ['MEX', 'LAX'],
+    ['MEX', 'BKK'],
+    ['MEX', 'LIM'],
+    ['MEX', 'EZE'],
+    ['LIM', 'BKK']
+];
+
+// The Graph...
+const adjacenyList = new Map();
+
+// Add a Node...
+function addNode(airport) {
+    // the empty array represents the routes/connections; at the start, it starts as empty...
+    adjacenyList.set(airport, []);
+}
+
+// Add unweighed edge (connections between nodes with no value attached to the edge connection) that are undirected (two-way), not directed (one-way between connections)...
+function addEdge(origin, destination) {
+    adjacenyList.get(origin).push(destination);
+    adjacenyList.get(destination).push(origin);
+}
+
+// Create the Graph...
+airports.forEach(airport => addNode(airport));
+routes.forEach(route => addEdge(route[0], route[1]));
+
+console.log(adjacenyList);
