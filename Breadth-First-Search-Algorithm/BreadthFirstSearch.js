@@ -38,7 +38,7 @@ let tree = {
 };
 
 
-let BreadthFirstSearch = (tree, rootNode, searchValue) => {
+let BreadthFirstSearch1 = (tree, rootNode, searchValue) => {
     // make a queue array
     let queue = [];
     // populate it with the node that will be the root of your search
@@ -108,3 +108,35 @@ airports.forEach(airport => addNode(airport));
 routes.forEach(route => addEdge(route[0], route[1]));
 
 console.log(adjacenyList);
+
+// ----------------------------------------------------------------------------------------------
+// Breadth-First Search - Is there a route between PHX and BKK?
+function BreadthFirstSearch2(start) {
+    // keep track of all the airports visited in the search so that we don't have to keep looking at the same aiport multiple times...
+    const airportsVisited = new Set();    /* here, a set is bascially an array with only unique values... */
+    const queue = [start];
+
+    while (queue.length > 0) {
+        // the first item in the array "queue" is assigned to the "airport" variable and mutates the original queue array...
+        const airport = queue.shift();
+
+        // get all the edges of the current "airport"...
+        const destinations = adjacenyList.get(airport);
+
+        // push all of the current "airport's" destinations into the "queue"...
+        for (const destination of destinations) {
+            // queue.push(destination);    /* we don't want to do this because then, we'll be forced to look at the same airport multiple times... */
+
+            if (destination === "BKK") console.log("Found BKK through: ", airport);
+
+            if (!airportsVisited.has(destination)) {
+                airportsVisited.add(destination);
+                queue.push(destination);    /* we push here so that we don't have to look at the same airport multiple times... */
+                console.log("I'm adding this airport to the queue to look at it's destinations: ", destination);
+            }
+        }
+    }
+
+}
+
+BreadthFirstSearch2("PHX");
