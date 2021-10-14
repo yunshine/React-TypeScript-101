@@ -1,6 +1,6 @@
 const BookList = () => {
     return (
-        <div>
+        <div className="BookList">
             <ul>
                 <li>The Bible</li>
                 <li>The Alchemist</li>
