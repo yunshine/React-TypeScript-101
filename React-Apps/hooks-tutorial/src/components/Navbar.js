@@ -1,7 +1,6 @@
 // An older, but different, way of consuming context vs. what is in BookList.js...
 
 // import { useContext } from 'react'; => different syntax than BookList.js
-import { Component } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 // class Navbar extends Component {

@@ -5,8 +5,6 @@ const BookList = () => {
     const { isLightTheme, light, dark } = useContext(ThemeContext);
     const theme = isLightTheme ? light : dark;
 
-    console.log("useContext TEST from BookList: ", isLightTheme, theme);
-
     return (
         <div className="BookList" style={{ background: theme.bg, color: theme.syntax }}>
             <ul>
