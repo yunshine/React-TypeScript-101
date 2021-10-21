@@ -6,7 +6,9 @@ const AuthContextProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const toggleAuth = () => {
+        console.log("before click: ", isAuthenticated);
         setIsAuthenticated(!isAuthenticated);
+        console.log("clicked: ", isAuthenticated);
     }
 
     return (

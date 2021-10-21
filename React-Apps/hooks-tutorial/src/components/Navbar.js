@@ -19,7 +19,7 @@ const Navbar = () => {
                 return (
                     <nav style={{ background: theme.ui, color: theme.syntax }}>
                         <h1>Hooks Tutorial App</h1>
-                        <div>
+                        <div onClick={toggleAuth} style={{ cursor: "pointer" }}>
                             {isAuthenticated ? "Logged In" : "Logged Out"}
                         </div>
                         <ul>
