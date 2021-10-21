@@ -1,7 +1,9 @@
+import SongList from "./components/SongList";
+
 function App() {
     return (
         <div className="App">
-            hi testing
+            <SongList />
         </div>
     );
 }
