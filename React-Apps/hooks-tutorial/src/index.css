@@ -11,7 +11,7 @@ body {
   .App {
     max-width: 400px;
     margin: 32px auto;
-    text-align: center;
+    /* text-align: center; */
   }
   nav, .SongList {
     padding: 8px;
