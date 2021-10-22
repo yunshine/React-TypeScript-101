@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NewSongForm from './NewSongForm';
 
 const SongList = () => {
@@ -7,6 +7,10 @@ const SongList = () => {
     const addSong = (title) => {
         setSongs([...songs, { title: title, id: songs.length + 1 }]);
     }
+
+    useEffect(() => {
+        console.log("useEffect ran...", songs);
+    })
 
     return (
         <div className="SongList">
