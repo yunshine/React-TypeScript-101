@@ -11,7 +11,7 @@ const NewSongForm = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label for="song-name">Song Name:</label>
+            <label htmlFor="song-name">Song Name:</label>
             <input type="text" value={songName} id="song-name" onChange={(e) => setSongName(e.target.value)} required />
             <input type="submit" value="Add Song" />
         </form>

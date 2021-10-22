@@ -8,9 +8,10 @@ const SongList = () => {
         setSongs([...songs, { title: title, id: songs.length + 1 }]);
     }
 
+    // the useEffect hook below will run when this component renders AND/OR the state in this component is updated...
     useEffect(() => {
         console.log("useEffect ran...", songs);
-    })
+    }, [songs])
 
     return (
         <div className="SongList">
