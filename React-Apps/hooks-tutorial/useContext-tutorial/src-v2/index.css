@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* app styles */
+  .App {
+    max-width: 400px;
+    margin: 32px auto;
+    /* text-align: center; */
+  }
+  nav, .SongList {
+    padding: 8px;
+  }
+  nav ul, .SongList {
+    padding: 0;
+  }
+  nav ul li, .SongList {
+    display: inline-block;
+    margin: 0 12px;
+    cursor: pointer;
+  }
+  .BookList {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .BookList ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  .BookList li {
+    padding: 12px;
+    margin: 12px auto;
+    border-radius: 8px;
+  }
