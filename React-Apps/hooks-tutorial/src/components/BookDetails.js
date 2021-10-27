@@ -5,7 +5,7 @@ const BookDetails = (props) => {
     const { removeBook } = useContext(BookContext);
 
     return (
-        <li onClick={() => removeBook(props.book.title)} style={{ cursor: 'pointer' }}>
+        <li onClick={() => removeBook(props.book.title)} >
             <div className="title">{props.book.title}</div>
             <div className="author">{props.book.author}</div>
         </li>
