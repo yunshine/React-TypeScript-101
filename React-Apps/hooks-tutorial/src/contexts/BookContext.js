@@ -9,8 +9,8 @@ const BookContextProvider = ({ children }) => {
         setBooks([...books, { title: title, author: author, id: books.length + 1 }]);
     }
 
-    const removeBook = (id) => {
-        setBooks(books.filter(book => book.id !== id));
+    const removeBook = (title) => {
+        setBooks(books.filter(book => book.title !== title));
     }
 
     return (
