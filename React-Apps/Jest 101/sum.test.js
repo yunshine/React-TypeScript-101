@@ -106,3 +106,20 @@ test('compiling android goes as expected', () => {
     expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
     expect(() => compileAndroidCode()).toThrow(/JDK/);
 });
+
+
+// TESTING ASYNC CODE - Instead of putting the test in a function with an empty argument, use a single argument called done. Jest will wait until the done callback is called before finishing the test.
+test('the data is peanut butter', done => {
+    function callback(data) {
+        try {
+            expect(data).toBe('peanut butter');
+            done();
+        } catch (error) {
+            done(error);
+        }
+    }
+
+    fetchData(callback);
+});
+/*  If done() is never called, the test will fail (with timeout error), which is what you want to happen.
+If the expect statement fails, it throws an error and done() is not called. If we want to see in the test log why it failed, we have to wrap expect in a try block and pass the error in the catch block to done. Otherwise, we end up with an opaque timeout error that doesn't show what value was received by expect(data).  */
