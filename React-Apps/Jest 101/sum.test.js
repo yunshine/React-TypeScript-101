@@ -108,6 +108,11 @@ test('compiling android goes as expected', () => {
 });
 
 
+const fetchData = callback => {
+    const data = "peanut butter";
+    callback(data);
+}
+
 // TESTING ASYNC CODE - Instead of putting the test in a function with an empty argument, use a single argument called done. Jest will wait until the done callback is called before finishing the test.
 test('the data is peanut butter', done => {
     function callback(data) {
