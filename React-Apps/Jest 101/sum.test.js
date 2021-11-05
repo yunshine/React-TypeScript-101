@@ -108,12 +108,13 @@ test('compiling android goes as expected', () => {
 });
 
 
+
+// TESTING ASYNC CODE - Instead of putting the test in a function with an empty argument, use a single argument called done. Jest will wait until the done callback is called before finishing the test.
 const fetchData = callback => {
     const data = "peanut butter";
     callback(data);
 }
 
-// TESTING ASYNC CODE - Instead of putting the test in a function with an empty argument, use a single argument called done. Jest will wait until the done callback is called before finishing the test.
 test('the data is peanut butter', done => {
     function callback(data) {
         try {
@@ -128,3 +129,34 @@ test('the data is peanut butter', done => {
 });
 /*  If done() is never called, the test will fail (with timeout error), which is what you want to happen.
 If the expect statement fails, it throws an error and done() is not called. If we want to see in the test log why it failed, we have to wrap expect in a try block and pass the error in the catch block to done. Otherwise, we end up with an opaque timeout error that doesn't show what value was received by expect(data).  */
+
+
+
+/*  If your code uses PROMISES, there is a more straightforward way to handle asynchronous tests. Return a promise from your test, and Jest will wait for that promise to resolve. If the promise is rejected, the test will automatically fail.
+
+For example, let's say that fetchDataWithPromise, instead of using a callback, returns a promise that is supposed to resolve to the string 'peanut butter'. We could test it with:  */
+
+const fetchDataWithPromise = () => {
+    return new Promise((resolve, reject) => {
+        const data = "peanut butter";
+        const err = "error";
+
+        resolve(data);
+        reject(err);
+    });
+}
+
+test('the data is peanut butter', () => {
+    return fetchDataWithPromise().then(data => {
+        expect(data).toBe('peanut butter');
+    });
+});
+
+// Be sure to return the promise - if you omit this return statement, your test will complete before the promise returned from fetchData resolves and then() has a chance to execute the callback.
+
+// If you expect a promise to be rejected, use the.catch method.Make sure to add expect.assertions to verify that a certain number of assertions are called.Otherwise, a fulfilled promise would not fail the test.
+
+test('the fetch fails with an error', () => {
+    expect.assertions(1);
+    return fetchDataWithPromise().catch(e => expect(e).toMatch('error'));
+});
