@@ -162,3 +162,35 @@ test('the data is peanut butter', () => {
     return expect(fetchDataWithPromise()).resolves.toBe('peanut butter');
 });
 // Be sure to return the assertion—if you omit this return statement, your test will complete before the promise returned from fetchDataWithPromise is resolved and then() has a chance to execute the callback.
+
+// If you expect a promise to be rejected, use the .rejects matcher. It works analogically to the .resolves matcher. If the promise is fulfilled, the test will automatically fail.
+test('the fetch fails with an error', () => {
+    return expect(fetchDataWithPromise()).rejects.toMatch('error');
+});
+
+
+// Async/Await
+// Alternatively, you can use async and await in your tests. To write an async test, use the async keyword in front of the function passed to test. For example, the same fetchDataWithPromise scenario can be tested with:
+test('the data is peanut butter', async () => {
+    const data = await fetchDataWithPromise();
+    expect(data).toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+    expect.assertions(1);
+    try {
+        await fetchDataWithPromise();
+    } catch (e) {
+        expect(e).toMatch('error');
+    }
+});
+// You can combine async and await with .resolves or .rejects.
+
+test('the data is peanut butter', async () => {
+    await expect(fetchDataWithPromise()).resolves.toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+    await expect(fetchDataWithPromise()).rejects.toMatch('error');
+});
+// In these cases, async and await are effectively syntactic sugar for the same logic as the promises example uses.
