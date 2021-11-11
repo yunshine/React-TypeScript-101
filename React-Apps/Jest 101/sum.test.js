@@ -1,3 +1,5 @@
+// npm run test - this command in the terminal will run the tests...
+
 const sum = require('./sum');
 const subtract = require('./subtract');  /*  How to import from different files...  */
 
@@ -139,7 +141,7 @@ const fetchDataWithPromise = () => {
         const data = "peanut butter";
         const err = "error";
 
-        resolve(data);
+        // resolve(data);
         reject(err);
     });
 }
@@ -154,7 +156,7 @@ test('the data is peanut butter', () => {
 // If you expect a promise to be rejected, use the.catch method.Make sure to add expect.assertions to verify that a certain number of assertions are called.Otherwise, a fulfilled promise would not fail the test.
 test('the fetch fails with an error', () => {
     expect.assertions(1);
-    return fetchDataWithPromise().catch(e => expect(e).toMatch('error'));
+    return fetchDataWithPromise().catch(err => expect(err).toMatch('error'));
 });
 
 // You can also use the .resolves matcher in your expect statement, and Jest will wait for that promise to resolve. If the promise is rejected, the test will automatically fail.
@@ -180,8 +182,8 @@ test('the fetch fails with an error', async () => {
     expect.assertions(1);
     try {
         await fetchDataWithPromise();
-    } catch (e) {
-        expect(e).toMatch('error');
+    } catch (err) {
+        expect(err).toMatch('error');
     }
 });
 // You can combine async and await with .resolves or .rejects.
