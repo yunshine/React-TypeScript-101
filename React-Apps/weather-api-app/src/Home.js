@@ -14,7 +14,6 @@ const Home = () => {
         setData(null);
         setIsLoading(true);
 
-        console.log("key: ", process.env.REACT_APP_API_KEY);
         setTimeout(() => {
             fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`)
                 .then(res => {
