@@ -1,8 +1,12 @@
+// import BookList from "./components/BookList";
+import CityContextProvider from "./contexts/CityContext";
 
 function App() {
     return (
         <div className="App">
-            weather app
+            <CityContextProvider>
+                weather app
+            </CityContextProvider>
         </div>
     );
 }
