@@ -1,4 +1,4 @@
-// import BookList from "./components/BookList";
+import CityForm from "./components/CityForm";
 import CityContextProvider from "./contexts/CityContext";
 
 function App() {
@@ -6,6 +6,7 @@ function App() {
         <div className="App">
             <CityContextProvider>
                 weather app
+                <CityForm />
             </CityContextProvider>
         </div>
     );
