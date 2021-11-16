@@ -7,7 +7,8 @@ const CityForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(city);
+        dispatch({ type: "CHANGE_CITY", city: city });
+        setCity("");
     }
 
     return (
