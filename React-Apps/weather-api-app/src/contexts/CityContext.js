@@ -4,7 +4,7 @@ import { cityReducer } from '../reducers/cityReducer';
 export const CityContext = createContext();
 
 const CityContextProvider = ({ children }) => {
-    const [city, dispatch] = useReducer(cityReducer, "testing: city text here...");
+    const [city, dispatch] = useReducer(cityReducer, "");
 
     return (
         <CityContext.Provider value={{ city, dispatch }}>
