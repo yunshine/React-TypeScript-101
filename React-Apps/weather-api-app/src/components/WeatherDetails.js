@@ -4,7 +4,7 @@ import { CityContext } from '../contexts/CityContext';
 const WeatherDetails = () => {
     const { city } = useContext(CityContext);
     const [isLoading, setIsLoading] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+    const [weatherData, setWeatherData] = useState();
 
     // Because we've used the keyword 'async', it is non-blocking. And, whenever we use the async key word, the function will return a PROMISE...
     const getWeatherData = async () => {
@@ -63,7 +63,7 @@ const WeatherDetails = () => {
     return (
         <div className="WeatherDetails">
             {isLoading && "Loading Weather Data..."}
-            {!isLoading &&
+            {weatherData &&
                 <div className="WeatherData">
                     <h2>Current Temperature in {weatherData.name}: {(weatherData.main.temp - 273.15).toFixed(1)} C</h2>
                     <h2>Humidity: {weatherData.main.humidity}%</h2>
